@@ -1,6 +1,15 @@
-<html>
+{% load easy_maps_tags %}
+<html><head></head>
 <body>
 <h1>Saibaba</h1>
+
 {% block content %}{% endblock %}
+
+    {% with 640 as w and 480 as h and 16 as z and "easy_maps/map.html" as t  %}
+      {% easy_map "Ekaterinburg, Mira 33" w h z using t %}
+    {% endwith %}
+
 </body>
 </html>
+
+
