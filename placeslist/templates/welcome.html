@@ -1,6 +1,26 @@
 {% extends "base.html" %}
 
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+var map;
+function initialize() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: new google.maps.LatLng(41.879535, -87.624333),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+}
+</script>
+<style>
+    body {font-family: sans-serif}
+    #map {width: 500px; height: 300px}
+</style>
 
+<div id=map></div>
+
+
+
+<!--
 {% block content %}
 {% load easy_maps_tags %}
 {% easy_map "sikkim" 300 400 8 %}
@@ -13,9 +33,9 @@ Hello, welcome!!
   {% endif %}
   class="easy-map-googlemap">
   {% block noscript %}{{ block.super }}{% endblock %}
-  {% if not map.computed_address %}<!-- geocoding error -->{% endif %}
+  {% if not map.computed_address %}<!-- geocoding error MISSINGHYPHENHERE->{% endif %}
 </div>
 
 
 {% endblock %}
-
+-->
