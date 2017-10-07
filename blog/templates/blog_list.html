@@ -1,0 +1,29 @@
+{% extends "homepage.html" %}
+
+
+
+{% block afternav %}
+
+<h1>Blog List</h1>
+<div>
+    {% for blog in blogs %}
+    <h3>{{blog.title}}</h3>
+
+
+    {#<h4><a href="{% url 'blog' pk=blog.pk %}">{{ blog.title }}</a></h4>#}
+
+    <h4><a href="{% url 'blog:blog_detail'  pk=blog.pk %}" >{{ blog.title }}</a></h4>
+
+    <p> blog/{{blog.pk}}</p>
+
+    <p>{{blog.content | linebreaksbr}}</p>
+    <p>created on: {{blog.created_date}}</p>
+    <p>published on: {{blog.pub_date}}</p>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
+
+
+

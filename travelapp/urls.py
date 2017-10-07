@@ -14,9 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.contrib import admin
+from django.contrib import admin,auth
+from . import views
 
 urlpatterns = [
+#    url(r'^admin/logout/$','django.contrib.auth.views.logout',{'next_page': '/homepage/'}),      #views.homepage, name='homepage'),
+    url(r'logout/$',views.logout_page, name='logout'),
+    url(r'^analysis/',include('analysis.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^',include('placeslist.urls')),
+    url(r'^new_admin/', views.new_admin, name='new_admin'),
+    url(r'^geo/',include('geopositioning.urls')),
+    url(r'^geomaps/',include('geomaps.urls')),
+    url(r'^places/',include('placeslist.urls')),
+    url(r'^blog/',include('blog.urls')),
+    url(r'^polls/',include('polls.urls')),
+    url(r'^$',views.homepage, name='homepage'),
+#    url(r'^homepage$',views.homepage, name='homepage_new'),
+    url(r'^placesdata/',include('placesdata.urls')),
+    url(r'^contactus/',include('contactus.urls')),
+#    url(r'^logout/$', auth.views.logout, name='logout'),
+#    url(r'^logout/$', 'django.contrib.auth.views.logout',{'next_page': '/homepage/'})
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

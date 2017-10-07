@@ -1,15 +1,18 @@
+{% extends "homepage.html" %}
+{% block afternav %}
 {% load easy_maps_tags %}
-<html><head></head>
-<body>
-<h1>Saibaba</h1>
+
+<h1>Saibaba.. base extending homepage template</h1>
 
 {% block content %}{% endblock %}
 
-    {% with 640 as w and 480 as h and 16 as z and "easy_maps/map.html" as t  %}
-      {% easy_map "Ekaterinburg, Mira 33" w h z using t %}
+
+<h2>welcome.html done.. above..</h2>
+    {% with 640 as w and 480 as h and 12 as z and "easy_maps/map.html" as t  %} 
+      {% easy_map "Ekaterinburg, Mira 33" w h z using t %} 
     {% endwith %}
+<h2>map (with) done.. above..</h2>
 
-</body>
-</html>
 
+{% endblock %}
 

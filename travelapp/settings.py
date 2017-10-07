@@ -12,10 +12,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import django
+#import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+#print("BASE_DIR:",BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -38,16 +39,47 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#    'geoposition',
+    'geoposition',
     'easy_maps',
     'placeslist',
+    'geopositioning',
+#    'googlemaps.waypoints',
+#    'weatherstations','django.contrib.gis',
+    'placesdata',
+    'django_tables2',
+    'leaflet',
+    'djgeojson',
+#    'mushrooms',
+    'contactus',
+    'analysis',
+    'rest_framework',
+    'blog',
+    'polls',
+    'geomaps',
 ]
 
-#GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCHYjIn-8XQ_C0X8PfCrgNiRR-BgNBB0Vs'
+GEOPOSITION_MAP_OPTIONS = {
+    'minZoom': 3,
+    'maxZoom': 15,
+}
+
+GEOPOSITION_MARKER_OPTIONS = {
+    'cursor': 'move'
+}
+
+fillPath = lambda x: os.path.join(os.path.dirname(__file__), x)
+GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCHYjIn-8XQ_C0X8PfCrgNiRR-BgNBB0Vs'
 #EASY_MAPS_GOOGLE_MAPS_API_KEY = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ___0123456789'
 EASY_MAPS_GOOGLE_MAPS_API_KEY = 'AIzaSyCHYjIn-8XQ_C0X8PfCrgNiRR-BgNBB0Vs'
 EASY_MAPS_CENTER = (27, 88)
 #EASY_MAPS_GEOCODE = 'example.custom_geocode'
+#GDAL_LIBRARY_PATH = '/home/ubuntu/anaconda3/envs/web1/lib/libgdal.so'
+#GDAL_LIBRARY_PATH='/usr/lib/libgdal.so.1'
+#GDAL_LIBRARY_PATH='/usr/lib/ogdi/libgdal.so'
+GDAL_LIBRARY_PATH='/home/ubuntu/anaconda3/pkgs/libgdal-2.2.1-0/lib/libgdal.so'
+#SPATIALITE_LIBRARY_PATH = 'mod_spatialite'
+SECRET_KEY = '_omc6hxq40u11no0uvi&g__lzj2n^4-dk#l#i+7+vgng!-bb^)'    # for django-leaflet
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -64,7 +96,8 @@ ROOT_URLCONF = 'travelapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(__file__), 'templates')],
+        'DIRS': [os.path.join(os.path.dirname(__file__), 'templates'),fillPath('templates'),os.path.join(BASE_DIR, 'templates','admin'),
+os.path.join(BASE_DIR,'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,6 +109,16 @@ TEMPLATES = [
         },
     },
 ]
+
+#print("templates dir:",TEMPLATES[0]['DIRS'])
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'admin_tools.template_loaders.Loader',
+    'django.template.loaders.cached.Loader',
+    'apptemplates.Loader',
+)
 
 WSGI_APPLICATION = 'travelapp.wsgi.application'
 
@@ -94,9 +137,9 @@ DATABASES = {
 DATABASES = {
     'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': BASE_DIR + '/traveldb.postgresql',                      
+#        'NAME': BASE_DIR + '/traveldb.postgresql',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'traveldb',                      
+        'NAME': 'traveldb',
         'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': '127.0.0.1',
@@ -141,4 +184,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+print("static_root:",STATIC_ROOT, "static_url:",STATIC_URL)
+
+LEAFLET_CONFIG = {'SPATIAL_EXTENT': (5.0, 44.0, 7.5, 46)}
+LOGIN_REDIRECT_URL = '/placesdata/places_scrapper'
+
+

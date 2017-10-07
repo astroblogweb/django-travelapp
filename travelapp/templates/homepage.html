@@ -1,0 +1,41 @@
+<html>
+    <head>travelapp-base html</head>
+    <body>
+        <ul style="display:inline;">
+            <li><a href="/places/">places map (old)</a></li>
+            <li><a href="/admin/">admin</a></li>
+            <li><a href="/new_admin/">new_admin</a></li>
+
+	    <li><a href="/geo/">geo</a></li>
+	    <li><a href="/geomaps/">geo-maps</a></li>
+
+		<li><a href="/placesdata/">placesdata</a></li>
+		<ul>
+		<li><a href="/placesdata/places_scrapper">places_scrapper</a></li>
+	    </ul>
+	    <li><a href="/contactus/">Contact Us</a></li>
+	    <li><a href="/analysis/">Analysis</a></li>
+<ul>
+    <li><a href="/analysis/charts_func/">Charts func</a></li>
+    <li><a href="/analysis/home_view/">Chart.js charts.. homeview </a></li>
+    <li><a href="/analysis/api/data/">API data</a></li>
+    <li><a href="/analysis/api/charts/data/">REST - Class data</a></li>
+</ul>
+    <li><a href="/blog/">Blog List</a></li>
+    <!-- <li><a href="/blog/1">Blog Detail (1)</a></li> -->
+
+
+    <li><a href="/polls/">Polls index</a></li>
+    <ul>
+        <li><a href="/polls/1">Polls detail</a></li>
+    </ul>
+
+
+        <li><a href="{% url 'homepage' %}">Home page</a></li>
+        </ul>
+{% block afternav %}{% endblock %}
+
+
+
+    </body>
+</html>
