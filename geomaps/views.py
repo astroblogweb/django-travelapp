@@ -72,7 +72,8 @@ def geomaps_shortlisted_display(request):
     shortlisted=Shortlist.objects.all()
     return render(request, "display_shortlisted.html",{"shortlisted":shortlisted})
 
-def rev_geocode(lat,lng):
+
+def rev_geocode(lat, lng):
     latlng=str(lat)+',  '+str(lng)
     print(latlng)
     geolocator = GoogleV3()
@@ -81,7 +82,8 @@ def rev_geocode(lat,lng):
     print("in reverse geocoding",*location,sep="\n") #.addres)
     return location
 
-def rev_geocode_google_api(lat,lng):
+
+def rev_geocode_google_api(lat, lng):
     url="http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false" %(lat,lng)
     print(url)
     json_result=requests.get(url)
