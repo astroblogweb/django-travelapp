@@ -86,6 +86,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfResponseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -187,7 +188,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-print("static_root:",STATIC_ROOT, "static_url:",STATIC_URL)
+#print("static_root:",STATIC_ROOT, "static_url:",STATIC_URL)
 
 LEAFLET_CONFIG = {'SPATIAL_EXTENT': (5.0, 44.0, 7.5, 46)}
 LOGIN_REDIRECT_URL = '/placesdata/places_scrapper'

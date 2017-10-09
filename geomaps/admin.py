@@ -8,3 +8,4 @@ from . import models
 
 
 admin.site.register(models.TravelSpotGeoMaps, LeafletGeoAdmin)
+admin.site.register(models.Shortlist)

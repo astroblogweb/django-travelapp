@@ -2,13 +2,26 @@
 {% block afternav %}
 
 
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+{% load staticfiles %}
+
+
+
+
+       <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }} /static/styles.css"/>
+
 
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
-    <script src="jquery.geocomplete.js"></script>
-    <script src="logger.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.geocomplete.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }} /static/logger.js"></script>
+
+
+
+
+
+
+
 
 
     <form>
@@ -37,8 +50,7 @@
           }
         });
 
-
-       $("#geocomplete").bind("geocode:dragged", function(event, latLng){
+        $("#geocomplete").bind("geocode:dragged", function(event, latLng){
           $("input[name=lat]").val(latLng.lat());
           $("input[name=lng]").val(latLng.lng());
           $("#reset").show();
@@ -55,16 +67,11 @@
           $("#geocomplete").trigger("geocode");
         }).click();
       });
+    </script>
 
-
-
-</script>
-<p>before maps</p>
+    <p>before maps</p>
     <div class="map_canvas"></div>
 <p>after maps</p>
 
 
-
-
-
-{% endblock %}
+{% endblock afternav %}

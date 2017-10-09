@@ -5,29 +5,21 @@ from django.shortcuts import render, redirect,render_to_response,get_object_or_4
 
 from .models import Blog,BlogForm
 
-def blog_new(request,pk):
+def blog_new(request):
     if request.method == 'GET':
         form = BlogForm()
+        print("request is get")
     else:
         form = BlogForm(request.POST)
+        print("request is post")
         if form.is_valid():
             blog=form.save(commit=False)
             blog.title = form.cleaned_data['title']
             blog.content = form.cleaned_data['content']
-            blog.created_date = form.cleaned_data['created_date']
-            blog.pub_date = form.cleaned_data['pub_date']
             blog.save()
-            # try:
-            #     send_mail(subject, message, from_email, ['admin@example.com'])
-            # except BadHeaderError:
-            #     return HttpResponse('Invalid header found.')
             print("going to return to success.. and then to redirect to blog detail")
-#            return redirect('success')
             return HttpResponse("successful Http-Response")
-            #return render_to_response("success.html")
-#            render(request,"success.html",{'success_msg':"Successfulllll"})
-    #return render(request, "email.html", {'form': form})
-    return HttpResponse("Un--successful Http-Response")
+#    return HttpResponse("Un--successful Http-Response")
 
 
 def success(request):
