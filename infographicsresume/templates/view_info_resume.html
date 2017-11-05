@@ -19,7 +19,7 @@
 <!-- inside sub HTML file.....{{forloop.counter}}
  -->
  <p>{{resume.firstname}} {{resume.lastname}}<br>
-DOB:{{resume.dateofbirth}} <br> Style:{{resume.style}}</p>
+DOB:{{resume.dateofbirth | date:"D d M Y"}} <br> Style:{{resume.style}}</p>
 </div>
 
 
