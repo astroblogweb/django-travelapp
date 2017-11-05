@@ -1,11 +1,22 @@
 {% extends "homepage.html" %}
 
 
+{% block description %}
+    <p>Resumes prepared using different styles (infographics). <br>Extracting date in appropriate format from the DateTime field.</p>
+{% endblock %}
+{% block concepts %}
+    <p>Basic CSS styles, grid layout</p>
+{% endblock %}
+{% block packages %}<p>django.core.validators, django.views.generic</p>{% endblock %}
+
+
 
 {% block afternav %}
 
-<h1>Infographic Resumes</h1>
+
 <div>
+    <div class="row">
+        <h1>Infographic Resumes</h1>
 
     <div class="row">
             {% for resume in listresume %}
@@ -23,7 +34,7 @@
 
             {% endfor %}
     </div>
-
+</div>
 
 </div>
 

@@ -158,7 +158,7 @@
 
 
 
-<div style="background-color: #FFC0CB">
+<div class="col-12 col-md-11" style="background-color: #FFC0CB">
 <ul class="nav nav-tabs" id="pol_opi_blo">
     <li><a data-toggle="tab" href="#opinions">Opinions</a></li>
     <li><a data-toggle="tab" href="#polls">Polls</a></li>
@@ -215,13 +215,22 @@
 <div>
 
         <div>
+            <div class="row" style="height: auto">
+
+            <div class="col-12 col-md-6" style="border: 2px solid blue;margin: 5px; height:100px">
             <h4>Description:</h4>
             {% block description %}{% endblock %}
-            <p>Concepts</p>
+            </div>
+            <div class="col-12 col-md-3" style="border: 2px solid blue;margin: 5px; height:100px">
+            <h4>Concepts:</h4>
             {% block concepts %}{% endblock %}
-            <p>Packages Used</p>
+            </div>
+            <div class="col-12 col-md-2" style="border: 2px solid blue;margin: 5px; height:100px">
+            <h4>Packages Used:</h4>
             {% block packages %}{% endblock %}
+            </div>
 
+            </div>
 
 
         </div>
@@ -236,7 +245,7 @@
 
 </div>
 
-<!-- todo: placesdata:scrap errors,     usergroups:   , directions   -->
+<!-- todo: placesdata:scrap errors,     usergroups:   , directions   ,   socialapps config     desc/cont/pkg for all      fortune:desc/con/pkg   -->
 
 
     </body>
