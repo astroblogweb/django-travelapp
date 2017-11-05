@@ -32,7 +32,7 @@ SECRET_KEY = 'nd!n#7j4j0clmf_pmayl(sh3-2codjso_ud9g8ey(5$txzp5n^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.165.36.179','localhost','127.0.0.1']
 
 
 # Application definition
@@ -133,7 +133,11 @@ EASY_MAPS_CENTER = (27, 88)
 #GDAL_LIBRARY_PATH = '/home/ubuntu/anaconda3/envs/web1/lib/libgdal.so'
 #GDAL_LIBRARY_PATH='/usr/lib/libgdal.so.1'
 #GDAL_LIBRARY_PATH='/usr/lib/ogdi/libgdal.so'
-GDAL_LIBRARY_PATH='/home/ubuntu/anaconda3/pkgs/libgdal-2.2.1-0/lib/libgdal.so'    # '/usr/lib/ogdi/libgdal.so'  on aws
+
+
+#################GDAL_LIBRARY_PATH='/usr/lib/ogdi/libgdal.so'   #'/home/ubuntu/anaconda3/pkgs/libgdal-2.2.1-0/lib/libgdal.so'
+
+
 #SPATIALITE_LIBRARY_PATH = 'mod_spatialite'
 SECRET_KEY = '_omc6hxq40u11no0uvi&g__lzj2n^4-dk#l#i+7+vgng!-bb^)'    # for django-leaflet
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
