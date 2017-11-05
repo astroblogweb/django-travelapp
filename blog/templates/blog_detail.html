@@ -7,6 +7,7 @@
 <h1>Blog Detail</h1>
 <div>
 
+<a href="{% url 'blog:blog_edit' pk=blog.pk %}">Edit</a>
     <h3>{{blog.title}}</h3>
     <p>{{blog.content | linebreaksbr}}</p>
     <p>created on: {{blog.created_date}}</p>

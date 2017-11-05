@@ -1,0 +1,34 @@
+{% extends "homepage.html" %}
+
+
+
+{% block afternav %}
+
+<h1>Infographic Resumes</h1>
+<div>
+
+    <div class="row">
+            {% for resume in listresume %}
+
+        <div class="col-xs-2" style="background-color: #CCC0CB; margin: 2px; height: 300px">
+
+           <p>{{resume.firstname}} {{resume.lastname}}<br>
+            DOB: {{resume.dateofbirth}} <br> Style: {{resume.style}}</p><br>
+            <div class="resume_styles">
+                {% include "view_info_resume.html" %}
+            </div>
+
+        </div>
+
+
+            {% endfor %}
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+
+
+

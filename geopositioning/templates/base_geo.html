@@ -2,29 +2,35 @@
 {% block afternav %}
 
 
-{% load easy_maps_tags %}
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 
 
 
-<h1>Saibaba!!!... Geo-Positioning</h1>
+<h3>Geo-Positioning Travel Spots</h3>
 
 <form method="POST" action="">{% csrf_token %}
     {{ form.media }}
     {{ form.as_p }}
 </form>
 
+{% block description %}
+      <p>Map#1: is developed using the Leaflet package. Travel locations are marked by click and drag (through admin portal) and displayed here. Details of the places are shown in a pop up. <br>Map#2: The second map is developed using Easy_maps package. It is used to fix a static location</p>
+  {% endblock %}
+
+  {% block concepts %}
+      <p>Geo tagging</p>
+  {% endblock %}
+
+  {% block packages %}
+      <p>django-leaflets, easy_maps</p>
+  {% endblock %}
+
 
 {% block content %}{% endblock %}
 
 
-<h2>welcome.html done.. above..</h2>
-    {% with 640 as w and 480 as h and 12 as z and "easy_maps/map.html" as t  %} 
-      {% easy_map "Ekaterinburg, Mira 33" w h z using t %} 
-    {% endwith %}
-<h2>map (with) done.. above..</h2>
 
 
 {% endblock %}

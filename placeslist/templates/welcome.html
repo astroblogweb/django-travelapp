@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "homepage.html" %}
 
 
 {% block content %}
@@ -6,6 +6,13 @@
 {% easy_map "sikkim" 300 400 8 %}
 
 Hello, welcome!!
+
+<h2>welcome.html done.. above..</h2>
+    {% with 640 as w and 480 as h and 12 as z and "easy_maps/map.html" as t  %}
+      {% easy_map "Ekaterinburg, Mira 33" w h z using t %}
+    {% endwith %}
+<h2>map (with) done.. above..</h2>
+
 
 <!--
 <div id="map-canvas-{{ map.pk }}"

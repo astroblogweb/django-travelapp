@@ -8,6 +8,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.core.serializers.json import DjangoJSONEncoder
 # {# <!-- url-endpoint="{% url api-data %}"> --> #}
+import random
+
 
 User=get_user_model()
 
@@ -16,11 +18,14 @@ class HomeView(View):
         #print("inside homeview")
         default_data={"datavalue":[1,2,3,4,5]}
         datalist={"datavalue":[1,2,3,4,5]}
-        datavalue=[1,1,10,1,4];	
+        # datavalue_nparray=np.random.randint(10, size=(1, 5))
+        # print(datavalue_nparray[0])
+        datavalue=random.sample(range(1, 100), 5)   #[1,1,10,1,4]
         #return render_to_response('charts_____backup_faulty.html')
         #return render_to_response("analysis.html")
-        return render_to_response('charts_backup_5.html',{'data':json.dumps(list(datavalue),cls=DjangoJSONEncoder)})
-#        return render_to_response('charts_backup_5.html',{'data':json.dumps(datalist)})
+        return render_to_response('charts_redo_2.html',{'data':json.dumps(list(datavalue),cls=DjangoJSONEncoder)})
+# works   #        return render_to_response('charts_backup_5.html',{'data':json.dumps(list(datavalue),cls=DjangoJSONEncoder)})
+
 
 
 
@@ -30,6 +35,7 @@ def get_data(request,*args,**kwargs):
         "sales":100,"customers":10,
     }
     return JsonResponse(data)
+
 
 
 

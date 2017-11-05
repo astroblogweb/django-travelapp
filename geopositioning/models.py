@@ -33,6 +33,6 @@ class TravelSpot(models.Model):
 
     @property
     def popupContent(self):
-      return '<img src="{}" /><p><{}</p>'.format(
+      return '<img src="{}" /><p><{}></p>'.format(
           self.picture.url,
           self.description)

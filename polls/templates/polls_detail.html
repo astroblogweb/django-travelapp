@@ -6,10 +6,11 @@
 
 <h1>Polls Detail</h1>
 <div>
+<a href="{% url 'polls:polls_vote' pk=poll.pk %}">Vote</a>
 
-    <h3>{{polls.question}}</h3>
+    <h3>{{poll.question}}</h3>
 
-        {% for choice in polls.choice_set.all %}
+        {% for choice in poll.choice_set.all %}
         <p> {{choice.choice_text}}...{{choice.votes}}</p>
         {% endfor %}
 

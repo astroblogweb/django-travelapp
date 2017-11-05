@@ -1,0 +1,30 @@
+{% extends "homepage.html" %}
+
+
+
+{% block afternav %}
+
+<h1>opinions Result</h1>
+<div>
+
+    <h3>{{opinions.question}}</h3>
+
+        {% for choice in opinions.choice_set.all %}
+        <p> {{choice.choice_text}}...{{choice.votes}}</p>
+        {% endfor %}
+
+
+
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}
+
+
+

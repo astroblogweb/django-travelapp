@@ -1,0 +1,95 @@
+<html>
+    <head><title>travelapp-base html</title></head>
+
+<!--
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }} /static/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }} /static/bootstrap-theme.min.css"/>
+-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }} /static/bootstrap.min.js"></script>
+
+
+    <body>
+<div class="container" >
+    <div class="row" style="height: 50px"></div>
+<div class="row" >
+
+<div class="col-6 col-md-4" style="background-color: #FFC0CB">
+        <ul class="nav nav-pills nav-stacked">
+
+    <li><a href="{% url 'homepage' %}">Home page</a></li>
+
+<li><a href="/polls/">Polls index</a></li>
+    <ul>
+        <li><a href="/polls/">Polls list</a></li>
+        <li><a href="/polls/detail/1">Polls detail</a></li>
+        <li><a href="/polls/vote/1">Polls vote</a></li>
+        <li><a href="/polls/result/1">Polls result</a></li>
+    </ul>
+
+
+<li><a href="/opinions/">opinions index</a></li>
+    <ul>
+        <li><a href="/opinions/">opinions list</a></li>
+        <li><a href="/opinions/detail/1">opinions detail</a></li>
+        <li><a href="/opinions/vote/1">opinions vote</a></li>
+        <li><a href="/opinions/result/1">opinions result</a></li>
+    </ul>
+
+
+            <li><a href="/places/">places map (old)</a></li>
+            <li><a href="/admin/">admin</a></li>
+            <li><a href="/new_admin/">new_admin</a></li>
+
+	    <li><a href="/geo/">geo</a></li>
+	    <li><a href="/geomaps/">geo-maps</a></li>
+        <ul>
+            <li><a href="/geomaps/reverse_geocoding">geo-reverse_geocoding</a></li>
+            <!--<li><a href="/geomaps/shortlist">geo-shortlist</a></li>-->
+            <li><a href="/geomaps/">geo-shortlist</a></li>
+            <li><a href="/geomaps/sorting_rubaxa">geo-rubaxa</a></li>
+            <li><a href="/geomaps/directions">geo-directions</a></li>
+        </ul>
+
+		<li><a href="/placesdata/">placesdata</a></li>
+		<ul>
+		<li><a href="/placesdata/places_scrapper">places_scrapper</a></li>
+	    </ul>
+	    <li><a href="/contactus/">Contact Us</a></li>
+	    <li><a href="/analysis/">Analysis</a></li>
+<ul>
+    <li><a href="/analysis/charts_func/">Charts func</a></li>
+    <li><a href="/analysis/home_view/">Chart.js charts.. homeview </a></li>
+    <li><a href="/analysis/api/data/">API data</a></li>
+    <li><a href="/analysis/api/charts/data/">REST - Class data</a></li>
+</ul>
+    <li><a href="/blog/">Blog List..</a></li>
+            <ul>
+        <li><a href="/blog/">Blog List</a></li>
+        <li><a href="/blog/1">Blog Detail (1)</a></li>
+        <li><a href="/blog/new">Blog new</a></li>
+            </ul>
+
+
+
+
+        </ul>
+</div>
+<!--cont, row,
+</div>
+</div>
+<div class="container">
+-->
+<div class="col-12 col-md-8">
+
+
+{% block afternav %}{% endblock %}
+
+</div>
+</div>
+
+    </body>
+</html>

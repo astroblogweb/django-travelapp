@@ -7,16 +7,16 @@
 <h1>Polls Vote</h1>
 <div>
 
-    <h3>{{polls.question}}</h3>
+    <h3>{{poll.question}}</h3>
 
 
 
 
-<form action="{% url 'polls:polls_vote' polls.id %}" method="post">
+<form action="{% url 'polls:polls_vote' poll.id %}" method="post">
 
     {% csrf_token %}
 
-    {% for choice in polls.choice_set.all %}
+    {% for choice in poll.choice_set.all %}
 
 
     <input type="radio" name="choice" id="{{ choice.choice_text }}" value="{{ choice.id }}" />
@@ -24,7 +24,7 @@
 
         {% endfor %}
 
-<input type="submit" name="Vote for this"/>
+<input type="submit" name="vote" value="vote_for_this"/>
 
 </form>
 

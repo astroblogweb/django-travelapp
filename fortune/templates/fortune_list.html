@@ -1,0 +1,14 @@
+{% extends "homepage.html" %}
+
+
+{% block afternav %}
+
+<h1>Fortune list (generic views) </h1>
+
+{% for each_fortune in fortune %}
+<p>{{each_fortune.position}}: {{each_fortune.name}}, worth ${{each_fortune.value}}</p>
+
+{% endfor %}
+
+{% endblock %}
+

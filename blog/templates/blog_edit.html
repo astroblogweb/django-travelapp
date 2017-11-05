@@ -1,0 +1,21 @@
+{% extends "homepage.html" %}
+
+
+
+{% block afternav %}
+
+<h1>Blog Edit/New</h1>
+<div>
+
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" >Save</button>
+    </form>
+
+</div>
+
+
+{% endblock %}
+
+
+

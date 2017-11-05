@@ -11,3 +11,8 @@ urlpatterns = [
     url(r'^home_view/', HomeView.as_view()),
     url(r'^', views.analysis, name='analysis'),
 ]
+
+
+# from django   access: api/data as: {% url 'api-data' %}
+# from JS       access: api/data as: var endpoint ='/api/data'
+# from HTML <div clas=".blah." url-endpoint="{% url 'api-data' %}" >
