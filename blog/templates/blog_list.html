@@ -14,10 +14,10 @@
 
     <h4><a href="{% url 'blog:blog_detail'  pk=blog.pk %}" >{{ blog.title }}</a></h4>
 
-    <p> blog/{{blog.pk}}</p>
+    <!-- <p> blog/{{blog.pk}}</p> -->
 
     <p>{{blog.content | linebreaksbr}}</p>
-    <p>created on: {{blog.created_date}}</p>
+    <!-- <p>created on: {{blog.created_date}}</p> -->
     <p>published on: {{blog.pub_date}}</p>
     {% endfor %}
 </div>

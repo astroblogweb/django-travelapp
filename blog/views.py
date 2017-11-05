@@ -63,7 +63,7 @@ def success(request):
 
 def blog_list(request):
     print("inside blog list")
-    blogs=Blog.objects.filter(pub_date__lte=timezone.now()).order_by('pub_date')
+    blogs=Blog.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')
     #blogs=Blog.objects.all()
     print(blogs)
     #return HttpResponse(blogs)

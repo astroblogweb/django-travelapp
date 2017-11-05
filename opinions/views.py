@@ -37,7 +37,7 @@ def opinions_vote(request,pk):
         choice_vote.votes+=1
         choice_vote.save()
         opinion=Opinions.objects.get(pk=pk)
-        return render(request,"opinions_result.html",{"opinion":opinion})
+        return render(request,"opinions_result.html",{"opinions":opinion})
     else:
         print("request is get")
         opinion=Opinions.objects.get(pk=pk)

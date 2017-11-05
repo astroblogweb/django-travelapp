@@ -10,6 +10,7 @@
 
 
     <body>
+    <div class="row" style="height: 10px"></div>
 
 <div class="container">
 
@@ -46,6 +47,10 @@
         <a class="dropdown-toggle" data-toggle="dropdown">Account</a>
     <ul class="dropdown-menu">
         <li><a href="/admin/">Admin</a></li>
+        <li><a href="/fortune_usergroups">usergroups-REST </a></li>
+        <li><a href="/fortune_usergroups/users">users-REST </a></li>
+        <li><a href="/fortune_usergroups/groups">groups-REST </a></li>
+        <li><a href="/api-auth">users-rest auth</a></li>
         {% if user.is_authenticated %}
         <li><a href="/accounts/password/change/">Change Password </a></li>
         <li><a href="/accounts/email/">Email Settings</a></li>
@@ -58,56 +63,53 @@
     </ul>
     </li>
 
-    <li><a class="dropdown-toggle" data-toggle="dropdown" href="/infographicsresume/">CV-info</a>
+    <li><a class="dropdown-toggle" data-toggle="dropdown" href="/infographicsresume/">Infographic CV</a>
         <ul class="dropdown-menu">
-        <li><a href="/infographicsresume/list">CV-lists</a></li>
-        <li><a href="{% url 'infographicsresume:list_resume' %}">CV-lists.. dynamic link</a></li>
-        <li><a href="/infographicsresume/new">CV-new</a></li>
-        <li><a href="/infographicsresume/detail/1">CV-detail</a></li>
-        <li><a href="/infographicsresume/edit/1">CV-edit</a></li>
+        <li><a href="/infographicsresume/list">List</a></li>
+        <!-- <li><a href="{% url 'infographicsresume:list_resume' %}">CV-lists.. dynamic link</a></li> -->
+        <li><a href="/infographicsresume/new">New</a></li>
+        <li><a href="/infographicsresume/detail/1">Detail</a></li>
+        <li><a href="/infographicsresume/edit/1">Edit</a></li>
         </ul>
     </li>
 
 
-    <li><a class="dropdown-toggle" data-toggle="dropdown" href="/fortune/">fortune</a>
+    <li><a class="dropdown-toggle" data-toggle="dropdown" href="/fortune/">Fortune 500</a>
             <ul class="dropdown-menu">
-                <li><a href="/fortune/">fortune-generic list</a></li>
-                <li><a href="/fortune/fortuneapi">fortune-REST API</a></li>
-                <li><a href="/fortune_usergroups">usergroups-REST </a></li>
-                <ul>
-                    <li><a href="/fortune_usergroups/users">users-REST </a></li>
-                    <li><a href="/fortune_usergroups/groups">groups-REST </a></li>
-                </ul>
-                <li><a href="/api-auth">users-rest auth</a></li>
+                <li><a href="/fortune/">Generic Views</a></li>
+                <li><a href="/fortune/fortuneapi">REST API</a></li>
+
+
 
            </ul>
      </li>
 
 <li><a class="dropdown-toggle" data-toggle="dropdown" href="/analysis/">Analysis</a>
     <ul class="dropdown-menu">
-        <li><a href="/analysis/charts_func/">Charts func</a></li>
-        <li><a href="/analysis/home_view/">Chart.js homeview </a></li>
-        <li><a href="/analysis/api/data/">API data</a></li>
-        <li><a href="/analysis/api/charts/data/">REST - Class data</a></li>
+        <!-- <li><a href="/analysis/charts_func/">Charts func</a></li> -->
+        <li><a href="/analysis/home_view/">Chart.js </a></li>
+        <!-- <li><a href="/analysis/api/data/">API data</a></li> -->
+        <li><a href="/analysis/api/charts/data/">REST framework</a></li>
     </ul>
  </li>
-            <li><a href="/places/">places map (old)</a></li>
+            <!-- <li><a href="/places/">places map (old)</a></li> -->
 
-        <li><a href="/geo/">geo</a></li>
+        <li><a href="/geo/">Geopositioning</a></li>
 
-        <li><a class="dropdown-toggle" data-toggle="dropdown" href="/geomaps/">geo-maps</a>
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="/geomaps/">Geo</a>
         <ul class="dropdown-menu">
-            <li><a href="/geomaps/reverse_geocoding">geo-reverse_geocoding</a></li>
+            <li><a href="/geo/">Positioning</a></li>
+            <li><a href="/geomaps/reverse_geocoding">Reverse Geocoding</a></li>
             <!--<li><a href="/geomaps/shortlist">geo-shortlist</a></li>-->
-            <li><a href="/geomaps/">geo-shortlist</a></li>
-            <li><a href="/geomaps/sorting_rubaxa">geo-rubaxa</a></li>
-            <li><a href="/geomaps/directions">geo-directions</a></li>
+            <li><a href="/geomaps/">Shortlist places</a></li>
+            <!-- <li><a href="/geomaps/sorting_rubaxa">geo-rubaxa</a></li> -->
+            <li><a href="/geomaps/directions">Find Directions</a></li>
         </ul>
         </li>
 
-        <li><a href="/placesdata/">placesdata</a></li>
+        <li><a href="/placesdata/">Travel Data</a></li>
           <ul class="dropdown-menu">
-              <li><a href="/placesdata/places_scrapper">places_scrapper</a></li>
+              <li><a href="/placesdata/places_scrapper">Scrap the web</a></li>
            </ul>
         <li><a href="/contactus/">Contact Us</a></li>
 
