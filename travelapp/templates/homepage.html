@@ -47,10 +47,16 @@
         <a class="dropdown-toggle" data-toggle="dropdown">Account</a>
     <ul class="dropdown-menu">
         <li><a href="/admin/">Admin</a></li>
-        <li><a href="/fortune_usergroups">usergroups-REST </a></li>
+
+
+        <!-- TO FIX THIS -->
+        <!-- <li><a href="/fortune_usergroups">usergroups-REST </a></li>
         <li><a href="/fortune_usergroups/users">users-REST </a></li>
         <li><a href="/fortune_usergroups/groups">groups-REST </a></li>
-        <li><a href="/api-auth">users-rest auth</a></li>
+        <li><a href="/api-auth">users-rest auth</a></li> -->
+
+
+
         {% if user.is_authenticated %}
         <li><a href="/accounts/password/change/">Change Password </a></li>
         <li><a href="/accounts/email/">Email Settings</a></li>
@@ -94,7 +100,7 @@
  </li>
             <!-- <li><a href="/places/">places map (old)</a></li> -->
 
-        <li><a href="/geo/">Geopositioning</a></li>
+        <!-- <li><a href="/geo/">Geopositioning</a></li> -->
 
         <li><a class="dropdown-toggle" data-toggle="dropdown" href="/geomaps/">Geo</a>
         <ul class="dropdown-menu">
@@ -230,7 +236,7 @@
 
 </div>
 
-<!-- todo: placesdata:scrap errors   -->
+<!-- todo: placesdata:scrap errors,     usergroups:   -->
 
 
     </body>
