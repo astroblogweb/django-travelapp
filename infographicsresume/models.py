@@ -23,7 +23,7 @@ class ResumeForm(forms.ModelForm):
         fields=['firstname','lastname','dateofbirth','style']#'__all__'
         widgets={
         'dateofbirth':DateInput(),
-        'style': NumberInput(attrs={'type':'range', 'min':'1', 'max':'4'})
+        'style': NumberInput(attrs={'type':'range', 'min':'1', 'max':'10'})
         }
 
 
