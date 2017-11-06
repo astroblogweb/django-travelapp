@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html >
+<head >
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script src='jquery-sortable.js'></script>
+
+
+    <script>
+
+
+
+
+
+$(function  () {
+  $("ol.example").sortable();
+});
+
+
+
+
+
+
+$("ol.simple_with_drop").sortable({
+  group: 'no-drop',
+  handle: 'i.icon-move',
+  onDragStart: function ($item, container, _super) {
+    // Duplicate items of the no drop area
+    if(!container.options.drop)
+      $item.clone().insertAfter($item);
+    _super($item, container);
+  }
+});
+$("ol.simple_with_no_drop").sortable({
+  group: 'no-drop',
+  drop: false
+});
+$("ol.simple_with_no_drag").sortable({
+  group: 'no-drop',
+  drag: false
+});
+
+
+
+
+
+
+</script>
+
+
+
+<style type="text/css">
+
+    body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ol.example li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+ol.example li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}
+</style>
+
+</head>
+<body>
+
+<div>
+
+<ol class='example'>
+  <li>First</li>
+  <li>Second</li>
+  <li>Third</li>
+</ol>
+
+
+</div>
+
+
+</body>
+</html>

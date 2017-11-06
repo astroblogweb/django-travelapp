@@ -1,0 +1,22 @@
+{% extends "homepage.html" %}
+
+
+{% block content %}
+{% load easy_maps_tags %}
+{% easy_map "sikkim" 300 400 8 %}
+
+Hello, welcome!!
+
+<!--
+<div id="map-canvas-{{ map.pk }}"
+  {% if map.computed_address %}
+    style="width: 100% !important; height: {{ height|default:"240" }}px;"
+  {% endif %}
+  class="easy-map-googlemap">
+  {% block noscript %}{{ block.super }}{% endblock %}
+  {% if not map.computed_address %}{% endif %}
+</div>
+-->
+
+{% endblock %}
+

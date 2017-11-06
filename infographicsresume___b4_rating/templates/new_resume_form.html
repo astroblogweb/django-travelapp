@@ -1,0 +1,51 @@
+{% extends "homepage.html" %}
+
+
+
+{% block afternav %}
+
+<h1>Cv info new</h1>
+<div>
+
+<form action="{% url 'infographicsresume:new_resume' %}" method="post">
+
+
+
+    {% csrf_token %}
+    {{ resumeform.as_p }}
+
+    <!-- <input type="range" name="style" value="1" required="" id="id_style" min="1" max="5"> -->
+
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+
+    <!-- <input type="range" min="0" max="50" value="0" step="5" onchange="showValue(this.value)" />
+<span id="range">0</span> -->
+
+
+</form>
+
+<!--
+    <br>
+{{ resumeform.as_table }}
+    <br>
+{{ resumeform.as_ul }}
+<br>
+ -->
+
+</div>
+
+
+<!-- <script type="text/javascript">
+
+    function showValue(newValue){
+        document.getElementById("range").innerHTML=newValue;
+    }
+
+</script>
+ -->
+{% endblock %}
+
+
+

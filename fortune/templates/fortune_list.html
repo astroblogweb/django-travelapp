@@ -1,0 +1,30 @@
+{% extends "homepage.html" %}
+
+
+
+
+{% block description %}
+    <p></p>
+{% endblock %}
+{% block concepts %}
+    <p>REST framework</p>
+{% endblock %}
+{% block packages %}
+    <p>rest_framework</p>
+{% endblock %}
+
+
+
+
+
+{% block afternav %}
+
+<h1>Fortune list (generic views) </h1>
+
+{% for each_fortune in fortune %}
+<p>{{each_fortune.position}}: {{each_fortune.name}}, worth ${{each_fortune.value}} billion</p>
+
+{% endfor %}
+
+{% endblock %}
+

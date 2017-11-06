@@ -1,0 +1,35 @@
+{% extends "homepage.html" %}
+
+
+
+{% block afternav %}
+
+<h1>New Infographic resume</h1>
+<div>
+
+<form action="{% url 'infographicsresume:new_resume' %}" method="post">
+
+
+
+    {% csrf_token %}
+    {{ resumeform.as_p }}
+
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+
+</form>
+
+
+</div>
+
+
+
+
+
+{# {% include "rating.html" %}  #}
+
+{% endblock %}
+
+
+

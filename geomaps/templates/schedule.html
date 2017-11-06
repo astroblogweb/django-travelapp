@@ -1,0 +1,77 @@
+{% extends "base_geomaps_basic.html" %}
+
+
+{% block mapinit %}
+<h1>Schedule (shortlisted sites)</h1>
+
+
+<div id="shortlisted">
+    {% include "display_shortlisted.html" %}
+
+</div>
+
+
+
+<form id="sites_list">
+    {% csrf_token %}
+    <div>
+        <input type="submit" name="submit" value="shortlist place">
+    </div>
+
+</form>
+
+
+<script type="text/javascript">
+    $(document).on("submit","#sites_list",function(e){
+
+
+        var lat=document.getElementById("lat_val").value;
+        var lng=document.getElementById("lng_val").value;
+        var location=document.getElementById("location_val").value;
+        var address=document.getElementById("address_val").value;
+        var sitelabel=document.getElementById("sitelabel_val").value;
+        var placeid=document.getElementById("placeid_val").value;
+
+        e.preventDefault();
+        $.ajax({
+            type:"POST",
+            url:"/geomaps/shortlist",
+            data:{
+                val:"OmSaiRam",
+                lat:lat,
+                lng:lng,
+                location: location,
+                formatted_address:address,//
+                sitelabel:sitelabel,
+                placeid:placeid,
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+            },
+            success:function(){
+                //$('#shortlisted').load('#shortlisted');
+                $("#shortlisted").load("display_shortlisted.html #display_shortlisted");
+                //alert("refreshed list");
+            }
+
+        });
+
+    });
+
+
+
+
+</script>
+
+
+<!-- <div style="background-color: #f0f0f0"> -->
+<!-- <p>before directions</p> -->
+
+
+<!-- {% include "directions.html" %} -->
+
+
+<!-- <p>after directions</p> -->
+
+
+<!-- </div> -->
+
+{% endblock mapinit %}

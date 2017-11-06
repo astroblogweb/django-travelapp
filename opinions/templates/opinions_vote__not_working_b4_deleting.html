@@ -1,0 +1,48 @@
+{% extends "homepage.html" %}
+
+
+
+{% block afternav %}
+
+<h1>opinions Vote</h1>
+<div>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <h3>{{opinion.question}}</h3>
+
+
+</div>
+<p> form loading.....</p>
+<div>
+
+<form>
+<input type="submit" name="vote___">
+</form>
+
+<form action="{% url 'opinions:opinions_vote' opinions.id %}" method="post">
+
+    {% csrf_token %}
+
+    {% for choice in opinion.choice_set.all %}
+
+
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+    <label for="choice{{ forloop.counter }}"> {{ choice.choice_text }} </label><br />
+
+        {% endfor %}
+
+<input type="submit" name="Vote"/>
+
+</form>
+
+
+
+
+</div>
+
+
+{% endblock %}
+
+
+

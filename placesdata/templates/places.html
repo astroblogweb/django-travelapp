@@ -1,0 +1,17 @@
+{% extends "homepage.html" %}
+
+
+{% block afternav %}
+
+<h1>List of prominent sites </h1>
+
+
+{% load render_table from django_tables2 %}
+{% load static %}
+ <link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" />
+{% render_table places %}
+
+
+
+{% endblock %}
+

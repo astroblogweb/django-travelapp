@@ -1,0 +1,32 @@
+{% extends "homepage.html" %}
+
+
+
+{% block afternav %}
+
+<h1>opinions Detail</h1>
+<div>
+
+ <a href="{% url 'opinions:opinions_vote' pk=opinion.pk %}">Vote</a>
+
+    <h3>{{opinion.question}}</h3>
+
+        {% for choice in opinion.choice_set.all %}
+        <p> {{choice.choice_text}}...{{choice.votes}}</p>
+        {% endfor %}
+
+
+
+<form>
+<input type="submit" name="vote___">
+</form>
+
+
+
+</div>
+
+
+{% endblock %}
+
+
+

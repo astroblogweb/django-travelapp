@@ -1,0 +1,143 @@
+{% extends "analysis_base.html" %}
+
+
+
+<!-- // Any of the following formats may be used
+var ctx = document.getElementById("myChart");
+var ctx = document.getElementById("myChart").getContext("2d");
+var ctx = $("#myChart");
+var ctx = "myChart";-->
+
+<script>
+ {% block jquery %}
+ labels=["Africa", "Asia", "Europe", "Latin America", "North America"];
+    var plotdata=[1,23,1,24,8];
+    var sending_data=[] //{"data":[1,2,3,4,5]};
+
+
+
+    $.ajax({
+      method:"GET",
+      //url: endpoint,
+      success: function(data){
+
+
+
+
+
+
+
+      var dataset=[
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: plotdata//sending_data[data]
+        }
+      ];
+
+    //alert("pie from inside ajax call");
+
+
+
+
+
+     var ctx2 = document.getElementById("myChart2");
+
+    var mypieChart2 = new Chart(ctx2, {
+        type: 'pie',
+
+        data:{
+      labels: labels,
+      datasets: dataset
+        },
+        options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Pie-chart world population (millions) in 2050'
+      }
+    }
+    } ); // end of new Chart
+
+
+
+var ctx = document.getElementById("myChart");
+    var myBarChart = new Chart(ctx, {
+        type: 'bar',
+
+        data:{
+      labels: labels,
+      datasets: dataset
+    },
+        options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+    } ); // end of new chart
+
+
+
+
+
+      }, // success
+
+    }) // end of AJAX
+
+
+
+
+
+
+
+
+    var ctx = document.getElementById("myChart");
+    // var dataset=[
+    //     {
+    //       label: "Population (millions)",
+    //       backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+    //       data: data
+    //     }
+    //   ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock%}
+
+</script>
+
+
+
+{% block content %}
+
+
+
+<div class="row">
+    <h1>Om SaiRam charts.html</h1>
+    <h2>Sending data: {{ sending_data }}</h2>
+        <div class="col-sm-12">
+        <div class="col-sm-6">
+        <canvas id="myChart" width="200" height="200"></canvas>
+        </div>
+        <div class="col-sm-6">
+        <canvas id="myChart2" width="200" height="200"></canvas>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

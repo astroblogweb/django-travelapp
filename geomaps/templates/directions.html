@@ -1,0 +1,145 @@
+
+<div>
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 30px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+    </style>
+
+<div id="directions-panel"></div>
+
+
+    <div>
+
+    <input type="button" name="directions" id="find_directions" value="find directions"> <!--id is the tag used to communicate-->
+    </div>
+
+
+
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+
+        var origin= "10.7904833,78.70467250000002";
+        var destination= "9.9252007,78.11977539999998";
+        // var waypoints= [
+        // {stopover: true,location: {'placeId':"ChIJYTN9T-plUjoRM9RjaAunYW4"}    },
+        // {stopover: true,location: {'placeId':"ChIJDyIG6rfxUjoR0WgeuFxoG20"}    }
+        // ];  // works
+
+
+        var waypoints = [
+        {stopover: true, location:new google.maps.LatLng(10.5001,76.9)}
+        ];
+
+
+
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,center: {lat: 10.5, lng: 78.5} });
+        directionsDisplay.setMap(map);
+
+        var onChangeHandler = function() {
+          calculateAndDisplayRoute(directionsService, directionsDisplay,origin,destination,waypoints);
+        };
+
+        document.getElementById('find_directions').addEventListener("click", onChangeHandler);
+        window.onload=function(){
+          calculateAndDisplayRoute(directionsService, directionsDisplay,origin,destination,waypoints);
+        };
+
+      }
+
+
+
+
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay,origin,destination,waypoints) {
+        directionsService.route({
+          //origin: document.getElementById('start').value,destination: document.getElementById('end').value,
+          origin: origin,
+          destination:destination,
+
+          waypoints: waypoints,
+
+          travelMode: 'DRIVING'
+        },
+
+        function(response, status) {
+          // if (status === 'OK') {
+          //   directionsDisplay.setDirections(response);
+
+          // }
+
+
+
+
+        if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+            var route = response.routes[0];
+            var summaryPanel = document.getElementById('directions-panel');
+            summaryPanel.innerHTML = '';
+            // For each route, display summary information.
+            for (var i = 0; i < route.legs.length; i++) {
+              var routeSegment = i + 1;
+              summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+                  '</b><br>';
+              summaryPanel.innerHTML += route.legs[i].start_address + '<br>'+' to '+'<br>';
+              summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+              summaryPanel.innerHTML += route.legs[i].duration.text + '<br>';
+              summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+            }
+          }
+
+
+
+
+          else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+<!-- COMMENTED AFTER ERROR FROM AWS -->
+<!-- <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&callback=initMap"></script> -->
+
+<!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCHYjIn-8XQ_C0X8PfCrgNiRR-BgNBB0Vs&libraries=places"></script> -->
+
+
+</div>
+

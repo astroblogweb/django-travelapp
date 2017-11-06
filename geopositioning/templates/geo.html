@@ -1,0 +1,45 @@
+{% extends "geo_incl_query.html" %}
+
+{% block map_query_results %}
+
+{% load leaflet_tags %}
+{% load geojson_tags %}
+
+{% block extra_assets %}
+  {% leaflet_js %}
+  {% leaflet_css %}
+{% endblock %}
+
+{% load easy_maps_tags %}
+
+
+
+
+<script type="text/javascript">
+  var collection = {{ qs_results|geojsonfeature:"popupContent"|safe }};
+
+  function onEachFeature(feature, layer) {
+    if (feature.properties && feature.properties.popupContent) {
+      layer.bindPopup(feature.properties.popupContent);
+    }
+    console.log("inside on_eachfeature");
+
+  }
+
+  function map_init(map, options) {
+    L.geoJson(collection, {onEachFeature: onEachFeature}).addTo(map);
+    // console.log("inside map_init bottom");
+
+  }
+</script>
+
+
+<h4>Map#1</h4>
+   {% leaflet_map "spots" callback="window.map_init" %}
+<h4>Map#2</h4>
+    {% with 640 as w and 480 as h and 12 as z and "easy_maps/map.html" as t  %}
+      {% easy_map "Ekaterinburg, Mira 33" w h z using t %}
+    {% endwith %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html {  height: 100%; }
+        body
+        {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        #map_canvas { height: 100%;}
+    </style>
+    <script type="text/javascript">
+        function initialize() {
+            var latlng = new google.maps.LatLng(-34.397, 150.644);
+            var myOptions = {
+                zoom: 8,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+        }
+        var myKey = "AIzaSyCHYjIn-8XQ_C0X8PfCrgNiRR-BgNBB0Vs";
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            // script.src = "https://maps.googleapis.com/maps/api/js?key=" + myKey + "&sensor=false&callback=initialize";
+            script.src = "https://maps.googleapis.com/maps/api/js?key=" + myKey + "&sensor=false&callback=initialize&v=3";
+            document.body.appendChild(script);
+        }
+    </script>
+ <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<!--    <script src="../jquery.geocomplete.js"></script>   -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
+
+    <script>
+      $(function(){
+        $("#geocomplete").geocomplete({
+          map: ".map_canvas",
+          details: "form",
+          types: ["geocode", "establishment"],
+        });
+
+        $("#find").click(function(){
+          $("#geocomplete").trigger("geocode");
+        });
+      });
+    </script>
+
+
+
+
+</head>
+<body onload="loadScript()">
+
+    <div id="map_canvas" style="width: 100%; height: 100%; zoom: 10" > </div>
+<br><br>
+    <div>
+      <div title="Zoom in" aria-label="Zoom in" tabindex="0" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img style="position: absolute; left: 0px; top: 0px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;" src="http://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false"></div></div><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div><div title="Zoom out" aria-label="Zoom out" tabindex="0" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;">
+    </div>
+<br><br>
+    <div>
+      <form>
+      <input id="geocomplete" placeholder="Type in an address" value="Empire State Bldg" autocomplete="off" type="text">
+      <input id="find" value="find" type="button">
+
+      <fieldset>
+        <h3>Address-Details</h3>
+
+        <label>Name</label>
+        <input name="name" value="" type="text">
+
+        <label>POI Name</label>
+        <input name="point_of_interest" value="" type="text">
+
+        <label>Latitude</label>
+        <input name="lat" value="" type="text">
+
+        <label>Longitude</label>
+        <input name="lng" value="" type="text">
+
+        <label>Location</label>
+        <input name="location" value="" type="text">
+
+        <label>Location Type</label>
+        <input name="location_type" value="" type="text">
+
+        <label>Formatted Address</label>
+        <input name="formatted_address" value="" type="text">
+
+        <label>Bounds</label>
+        <input name="bounds" value="" type="text">
+
+        <label>Viewport</label>
+        <input name="viewport" value="" type="text">
+
+        <label>Route</label>
+        <input name="route" value="" type="text">
+
+        <label>Street Number</label>
+        <input name="street_number" value="" type="text">
+
+        <label>Postal Code</label>
+        <input name="postal_code" value="" type="text">
+
+        <label>Locality</label>
+        <input name="locality" value="" type="text">
+
+        <label>Sub Locality</label>
+        <input name="sublocality" value="" type="text">
+
+        <label>Country</label>
+        <input name="country" value="" type="text">
+
+        <label>Country Code</label>
+        <input name="country_short" value="" type="text">
+
+        <label>State</label>
+        <input name="administrative_area_level_1" value="" type="text">
+
+        <label>Place ID</label>
+        <input name="place_id" value="" type="text">
+
+        <label>ID</label>
+        <input name="id" value="" type="text">
+
+        <label>Reference</label>
+        <input name="reference" value="" type="text">
+
+        <label>URL</label>
+        <input name="url" value="" type="text">
+
+        <label>Website</label>
+        <input name="website" value="" type="text">
+      </fieldset>
+    </form>
+    </div>
+</body>
+</html>
