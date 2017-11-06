@@ -70,3 +70,8 @@ DATABASES = {
     }
 }
 
+STATIC_ROOT_SUFFIX=""
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]

@@ -18,7 +18,8 @@ from django.contrib import admin,auth
 from . import views
 from login import views as login_views
 from django.contrib.auth import views as auth_views
-
+from .settings import STATIC_ROOT, STATIC_URL
+from django.conf.urls.static import static
 
 from django.conf.urls import url,include
 from fortune import views as rest_views
@@ -68,4 +69,6 @@ urlpatterns = [
     url(r'^contactus/',include('contactus.urls')),
     url(r'^$',views.homepage, name='homepage'),
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-]
+    # url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+    #     {'document_root':STATIC_ROOT})
+] + static(STATIC_URL, document_root=STATIC_ROOT)

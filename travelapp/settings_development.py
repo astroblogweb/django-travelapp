@@ -64,3 +64,5 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+STATIC_ROOT_SUFFIX="static"

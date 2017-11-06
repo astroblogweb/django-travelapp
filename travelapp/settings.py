@@ -181,8 +181,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
-#print("static_root:",STATIC_ROOT, "static_url:",STATIC_URL)
 
 LEAFLET_CONFIG = {'SPATIAL_EXTENT': (4.0, 44.0, 7.5, 46)}
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, STATIC_ROOT_SUFFIX)
+STATIC_URL = '/static/'
+print("static_root:",STATIC_ROOT, "static_url:",STATIC_URL)
