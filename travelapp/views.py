@@ -9,7 +9,7 @@ from django.template import RequestContext
 #@login_required
 def homepage(request):
     print("in homepage view func")
-    return render(request,'homepage.html') # works better than r_2_r
+    return render(request,'home.html') # works better than r_2_r
     #return render_to_response('homepage.html') # works, but username not appearing on homepage-alone
 
 

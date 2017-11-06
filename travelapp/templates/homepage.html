@@ -2,16 +2,22 @@
     <head><title>travelapp-base html</title></head>
 
 
-<link rel="stylesheet" href='{{ STATIC_URL}} /static/bars-1to10.css'>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }} /static/bootstrap.min.js"></script>
 
+<link rel="stylesheet" href='{{ STATIC_URL}} /static/bars-1to10.css'>
+<link rel="stylesheet" href='{{ STATIC_URL}} /static/travelapp.css'>
+
+
 
     <body>
-    <div class="row" style="height: 10px"></div>
 
+<div class="full_page">
+    <!-- <div class="row" style="height: 10px"></div> -->
+<div>
 <div class="container">
 
 {#        {% include "homepage_navbar.html" %}   #}
@@ -24,20 +30,20 @@
 
 
 <div class="row" >
-<div>
+<div class="col-container">
 
 
 
        {% if user.is_authenticated %}
-            <p>Welcome..... {{ user.get_username }}</p>
+            <h3>Welcome..... {{ user.get_username }}</h3>
         {% else %}
-            <p>Welcome, Guest</p>
+            <h3>Welcome, Guest</h3>
         {% endif %}
 
 
 
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs" style="width:100%">
 
     <li>
         <a href="{% url 'homepage' %}">Home page</a>
@@ -158,7 +164,9 @@
 
 
 
-<div class="col-12 col-md-11" style="background-color: #FFC0CB">
+<!-- <div class="row" style="height:10px"></div> -->
+
+<div>
 <ul class="nav nav-tabs" id="pol_opi_blo">
     <li><a data-toggle="tab" href="#opinions">Opinions</a></li>
     <li><a data-toggle="tab" href="#polls">Polls</a></li>
@@ -169,10 +177,10 @@
     <div id="opinions" class="tab-pane ">
     <ul class="nav nav-tabs">
     <li><a href="/opinions/">opinions index</a></li>
-        <li><a href="/opinions/">opinions list</a></li>
-        <li><a href="/opinions/1/detail">opinions detail</a></li>
-        <li><a href="/opinions/1/vote">opinions vote</a></li>
-        <li><a href="/opinions/1/result">opinions result</a></li>
+        <!-- <li><a href="/opinions/">opinions list</a></li> -->
+        <!-- <li><a href="/opinions/1/detail">opinions detail</a></li> -->
+        <!-- <li><a href="/opinions/1/vote">opinions vote</a></li> -->
+        <!-- <li><a href="/opinions/1/result">opinions result</a></li> -->
     </ul></div>
 
 
@@ -180,18 +188,18 @@
     <div id="polls" class="tab-pane ">
         <ul class="nav nav-tabs">
     <li><a href="/polls/">Polls index</a></li>
-        <li><a href="/polls/">Polls list</a></li>
-        <li><a href="/polls/detail/1">Polls detail</a></li>
-        <li><a href="/polls/vote/1">Polls vote</a></li>
-        <li><a href="/polls/result/1">Polls result</a></li>
+        <!-- <li><a href="/polls/">Polls list</a></li> -->
+        <!-- <li><a href="/polls/detail/1">Polls detail</a></li> -->
+        <!-- <li><a href="/polls/vote/1">Polls vote</a></li> -->
+        <!-- <li><a href="/polls/result/1">Polls result</a></li> -->
     </ul></div>
 
 
     <div id="blog" class="tab-pane ">
     <ul class="nav nav-tabs">
-    <li><a href="/blog/">Blog List..</a></li>
-        <li><a href="/blog/">Blog List</a></li>
-        <li><a href="/blog/1/">Blog Detail (1)</a></li>
+    <li><a href="/blog/">Blog Index</a></li>
+        <!-- <li><a href="/blog/">Blog List</a></li> -->
+        <!-- <li><a href="/blog/1/">Blog Detail (1)</a></li> -->
         <li><a href="/blog/new/">Blog new</a></li>
     </ul></div>
 </div>
@@ -214,29 +222,51 @@
 
 <div>
 
-        <div>
-            <div class="row" style="height: auto">
+    <!-- <div class="row" style="height: auto; align-content: auto;"> -->
 
-            <div class="col-12 col-md-6" style="border: 2px solid blue;margin: 5px; height:100px">
+
+
+
+
+<!-- {% if request.path != "/accounts/login/" %} -->
+
+
+
+        <div class="content_frame col-container">
+            <div class="col col1" >
             <h4>Description:</h4>
             {% block description %}{% endblock %}
             </div>
-            <div class="col-12 col-md-3" style="border: 2px solid blue;margin: 5px; height:100px">
+            <div class="col col2">
             <h4>Concepts:</h4>
             {% block concepts %}{% endblock %}
             </div>
-            <div class="col-12 col-md-2" style="border: 2px solid blue;margin: 5px; height:100px">
+            <div class="col col3">
             <h4>Packages Used:</h4>
             {% block packages %}{% endblock %}
             </div>
 
-            </div>
-
-
         </div>
 
+
+<!-- {% endif %} -->
+
+
+
+
+
+
+    <!-- </div> -->
+
 <!-- <div class="col-12 col-md-8"> -->
-{% block afternav %}{% endblock %}
+
+<div class="row" style="height:10px"></div>
+
+    <div class="content_frame">
+            {% block afternav %}{% endblock %}
+    </div>
+
+
 </div>
 
 </div>
@@ -244,7 +274,8 @@
 
 
 </div>
-
+</div>
+</div>
 <!-- todo:
 
     placesdata:scrap errors,
@@ -256,6 +287,8 @@
     debug=false (static files??)
 
    -->
+
+
 
 
     </body>

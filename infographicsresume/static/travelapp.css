@@ -1,0 +1,62 @@
+.full_page{
+    /*background: #98AFC7; *//* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#56A5EC, #ff80df); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#56A5EC, #ff80df); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#56A5EC, #ff80df); /* For Firefox 3.6 to 15 */*/*/*/
+    background: linear-gradient(#56A5EC, #ff80df);
+    /*height: 100%;*/
+}
+
+.h3{
+    color: black; font-family:"Times New Roman", Georgia, Serif;
+}
+.nav-tabs{
+    border-bottom: 0px;
+    margin: -20px 0px;
+    border-radius: 10px;
+    /*padding: 0px 15px;*/
+    display: table;
+    width: 100%;
+    /*table-layout: fixed;*/
+}
+
+.nav>li>a{
+    font-size: 20;color: black;align-items: center;
+    border: 2px solid black; border-radius: 5px;
+    background-color: #FAD4F0;
+
+}
+
+.content_frame{
+    background-color: #FAD4F0;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 15px;
+    margin-bottom: 15px;
+
+}
+
+.content_frame>div>div{
+    /*border: 2px solid blue;*/
+    margin: 5px;
+    height:auto;
+}
+
+.container{
+    height: auto;
+}
+.col-container {
+    display: table;
+    border-spacing:10px;
+    width: 100%;
+}
+
+.col {
+    display: table-cell;
+}
+.col1{width:55%;}
+.col2{width:30%;}
+.col2{width:25%;}
+
+/** { border: 1px solid red; }*/
+
