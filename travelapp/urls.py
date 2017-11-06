@@ -20,7 +20,7 @@ from login import views as login_views
 from django.contrib.auth import views as auth_views
 from .settings import STATIC_ROOT, STATIC_URL
 from django.conf.urls.static import static
-from django.contrib.staticfiles import views
+from django.contrib.staticfiles import views as staticfiles_views
 
 from django.conf.urls import url,include
 from fortune import views as rest_views
@@ -39,7 +39,7 @@ urlpatterns = [
 
     url(r'^analysis/',include('analysis.urls')),
     url(r'^admin/', admin.site.urls),
-    # url(r'^new_admin/', views.new_admin, name='new_admin'),
+    url(r'^new_admin/', views.new_admin, name='new_admin'),
     url(r'^geo/',include('geopositioning.urls')),
     url(r'^geomaps/',include('geomaps.urls')),
     url(r'^fortune/',include('fortune.urls')),
@@ -74,4 +74,4 @@ urlpatterns = [
     #     {'document_root':STATIC_ROOT})
 ]
 + static(STATIC_URL, document_root=STATIC_ROOT)
-+ url(r'^static/(?P<path>.*)$', views.serve),
++ url(r'^static/(?P<path>.*)$', staticfiles_views.serve),
