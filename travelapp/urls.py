@@ -39,7 +39,7 @@ urlpatterns = [
 
     url(r'^analysis/',include('analysis.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^new_admin/', views.new_admin, name='new_admin'),
+    # url(r'^new_admin/', views.new_admin, name='new_admin'),
     url(r'^geo/',include('geopositioning.urls')),
     url(r'^geomaps/',include('geomaps.urls')),
     url(r'^fortune/',include('fortune.urls')),
