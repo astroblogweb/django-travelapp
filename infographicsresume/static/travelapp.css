@@ -12,7 +12,7 @@
 }
 .nav-tabs{
     border-bottom: 0px;
-    margin: -20px 0px;
+    margin: -20px -15px;
     border-radius: 10px;
     /*padding: 0px 15px;*/
     display: table;
@@ -20,9 +20,16 @@
     /*table-layout: fixed;*/
 }
 
+.welcome>h3{
+    font-family: cursive;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+}
+
 .nav>li>a{
     font-size: 20;color: black;align-items: center;
-    border: 2px solid black; border-radius: 5px;
+    border: 2px solid black; border-radius: 10px;
     background-color: #FAD4F0;
 
 }
@@ -58,5 +65,8 @@
 .col2{width:30%;}
 .col2{width:25%;}
 
+.tab-pane>ul>li>a{
+    background-color: #FAD4E0;
+}
 /** { border: 1px solid red; }*/
 
