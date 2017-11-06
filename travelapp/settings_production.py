@@ -1,4 +1,4 @@
-
+import os
 SECRET_KEY = 'nd!n#7j4j0clmf_pmayl(sh3-2codjso_ud9g8ey(5$txzp5n^'  # for django leaflet
 
 DEBUG = False
