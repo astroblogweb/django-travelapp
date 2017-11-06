@@ -20,6 +20,7 @@ from login import views as login_views
 from django.contrib.auth import views as auth_views
 from .settings import STATIC_ROOT, STATIC_URL
 from django.conf.urls.static import static
+from django.contrib.staticfiles import views
 
 from django.conf.urls import url,include
 from fortune import views as rest_views
@@ -71,4 +72,6 @@ urlpatterns = [
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
     # url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
     #     {'document_root':STATIC_ROOT})
-] + static(STATIC_URL, document_root=STATIC_ROOT)
+]
++ static(STATIC_URL, document_root=STATIC_ROOT)
++ url(r'^static/(?P<path>.*)$', views.serve),
