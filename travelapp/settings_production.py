@@ -1,7 +1,7 @@
 import os
 SECRET_KEY = 'nd!n#7j4j0clmf_pmayl(sh3-2codjso_ud9g8ey(5$txzp5n^'  # for django leaflet
 
-DEBUG = False
+DEBUG = True ##### False-------
 
 ALLOWED_HOSTS = ['54.165.36.179','localhost','127.0.0.1']
 
@@ -70,8 +70,8 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT_SUFFIX="static"     # in production, A SINGLE separate folder called 'staticfiles' will be created with all js/css etc
-STATIC_URL = '/static/'
+# STATIC_ROOT_SUFFIX="static"     # in production, A SINGLE separate folder called 'staticfiles' will be created with all js/css etc
+# STATIC_URL = '/static/'
 
 #STATIC_ROOT_SUFFIX="staticfiles"     # in production, A SINGLE separate folder called 'staticfiles' will be created with all js/css etc
 #STATIC_URL = '/staticfiles/'

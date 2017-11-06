@@ -185,6 +185,7 @@ USE_TZ = True
 LEAFLET_CONFIG = {'SPATIAL_EXTENT': (4.0, 44.0, 7.5, 46)}
 
 
+STATIC_ROOT_SUFFIX="static"
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, STATIC_ROOT_SUFFIX)
-
 print("static_root:",STATIC_ROOT, "static_url:",STATIC_URL, "Debug:",DEBUG)

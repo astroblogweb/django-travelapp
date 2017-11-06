@@ -74,5 +74,4 @@ urlpatterns = [
     #     {'document_root':STATIC_ROOT})
     url(r'^static/(?P<path>.*)$', staticfiles_views.serve),
 ]
-
-+ static(STATIC_URL, document_root=STATIC_ROOT)
+# + static(STATIC_URL, document_root=STATIC_ROOT)

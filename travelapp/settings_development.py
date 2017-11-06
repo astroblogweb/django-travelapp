@@ -65,5 +65,5 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT_SUFFIX="static"
-STATIC_URL = '/static/'
+# STATIC_ROOT_SUFFIX="static"
+# STATIC_URL = '/static/'
