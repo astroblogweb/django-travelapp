@@ -72,6 +72,7 @@ urlpatterns = [
     #url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
     # url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
     #     {'document_root':STATIC_ROOT})
+    url(r'^static/(?P<path>.*)$', staticfiles_views.serve),
 ]
+
 + static(STATIC_URL, document_root=STATIC_ROOT)
-+ url(r'^static/(?P<path>.*)$', staticfiles_views.serve),
