@@ -32,7 +32,7 @@ SECRET_KEY = 'nd!n#7j4j0clmf_pmayl(sh3-2codjso_ud9g8ey(5$txzp5n^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.165.36.179','localhost','127.0.0.1']
 
 
 # Application definition
@@ -72,7 +72,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.twitter',
 
 ]
@@ -89,7 +89,7 @@ INSTALLED_APPS = [
 # for all_auth
 #SITE_ID = 1 # for example site from website..and
 # https://stackoverflow.com/questions/14019017/django-allauth-no-facebook-app-configured-please-add-a-socialapp-using-the-djan
-SITE_ID=2
+SITE_ID=3
 #SOCIALACCOUNT_PROVIDERS = {'facebook': {},'google':{}, 'twitter':{}}
 SOCIALACCOUNT_PROVIDERS =  {'facebook':
                                {'METHOD': 'oauth2',
@@ -126,6 +126,7 @@ GEOPOSITION_MARKER_OPTIONS = {
 
 fillPath = lambda x: os.path.join(os.path.dirname(__file__), x)
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCHYjIn-8XQ_C0X8PfCrgNiRR-BgNBB0Vs'
+GOOGLE_API_KEY = 'AIzaSyCHYjIn-8XQ_C0X8PfCrgNiRR-BgNBB0Vs'
 #EASY_MAPS_GOOGLE_MAPS_API_KEY = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ___0123456789'
 EASY_MAPS_GOOGLE_MAPS_API_KEY = 'AIzaSyCHYjIn-8XQ_C0X8PfCrgNiRR-BgNBB0Vs'
 EASY_MAPS_CENTER = (27, 88)
@@ -133,7 +134,11 @@ EASY_MAPS_CENTER = (27, 88)
 #GDAL_LIBRARY_PATH = '/home/ubuntu/anaconda3/envs/web1/lib/libgdal.so'
 #GDAL_LIBRARY_PATH='/usr/lib/libgdal.so.1'
 #GDAL_LIBRARY_PATH='/usr/lib/ogdi/libgdal.so'
-GDAL_LIBRARY_PATH='/home/ubuntu/anaconda3/pkgs/libgdal-2.2.1-0/lib/libgdal.so'    # '/usr/lib/ogdi/libgdal.so'  on aws
+
+
+#################GDAL_LIBRARY_PATH='/usr/lib/ogdi/libgdal.so'   #'/home/ubuntu/anaconda3/pkgs/libgdal-2.2.1-0/lib/libgdal.so'
+
+
 #SPATIALITE_LIBRARY_PATH = 'mod_spatialite'
 SECRET_KEY = '_omc6hxq40u11no0uvi&g__lzj2n^4-dk#l#i+7+vgng!-bb^)'    # for django-leaflet
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
