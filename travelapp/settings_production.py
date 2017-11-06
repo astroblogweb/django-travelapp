@@ -72,7 +72,7 @@ DATABASES = {
 
 STATIC_ROOT_SUFFIX="staticfiles"     # in production, A SINGLE separate folder called 'staticfiles' will be created with all js/css etc
 STATIC_URL = '/staticfiles/'
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "staticfiles"),
 #     #'/var/www/static/',
