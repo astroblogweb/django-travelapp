@@ -106,7 +106,7 @@
               <li><a href="/placesdata/places_scrapper">Scrap the web</a></li>
            </ul>
         </li>
-        <li><a href="/contactus/">Contact Us</a></li>
+        <!-- <li><a href="/contactus/">Contact Us</a></li> -->
 </ul>
 </div>
 <div class="col-md-2" style="position: relative; float: right; ">
@@ -175,16 +175,23 @@
 
 <!-- <div class="row" style="height:10px"></div> -->
 <div>
-<div class="col-12 col-md-5">
+<div class="col-12 col-md-6">
 <ul class="nav nav-tabs" id="pol_opi_blo">
     <li><a data-toggle="tab" href="#infocv">Resumes</a></li>
     <li><a data-toggle="tab" href="#opinions">Opinions</a></li>
     <li><a data-toggle="tab" href="#polls">Polls</a></li>
     <li><a data-toggle="tab" href="#blog">Blog</a></li>
+    <li><a data-toggle="tab" href="#contact">Contact</a></li>
 </ul>
 </div>
-<div class="col-12 col-md-6">
+<div class="col-12 col-md-5">
 <div class="tab-content">
+
+    <div id="contact" class="tab-pane ">
+    <ul class="nav nav-tabs">
+    <li><a href="/contactus/">Send Email</a></li>
+    </ul></div>
+
     <div id="opinions" class="tab-pane ">
     <ul class="nav nav-tabs">
     <li><a href="/opinions/">List of Opinions</a></li>
@@ -251,11 +258,10 @@
 
 
 
-<!-- {% if request.path != "/accounts/login/" %} -->
+{% if 'blog/' in request.path or 'polls/' in request.path or 'opinions/' in request.path %}
+{% else %}
 
-
-
-        <div class="content_frame col-container">
+       <div class="content_frame col-container">
             <div class="col col1" >
             <h4>Description:</h4>
             {% block description %}{% endblock %}
@@ -272,7 +278,7 @@
         </div>
 
 
-<!-- {% endif %} -->
+{% endif %}
 
 
 
