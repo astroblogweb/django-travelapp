@@ -1,36 +1,17 @@
-{% extends "homepage.html" %}
-
-
-
-
-
-
-{% block description %}
-    <p>Django's REST framework (GET,POST) used to retrieve data (GET) pertaining to a model and also to add (POST) new objects to the specific model.</p>
-{% endblock %}
-{% block concepts %}
-    <p>REST framework (GET, POST), serializers</p>
-{% endblock %}
-{% block packages %}
-    <p>rest_framework(views, status, response, serializers)</p>
-{% endblock %}
-
-
-
-
-
-{% block afternav %}
-
-
 {% load rest_framework %}
 
+<html>
 
-<h1>Fortune list (generic views) </h1>
+<body>
+<h1>Fortune list (api views) </h1>
 
 {% for each_fortune in fortune %}
 <p>{{each_fortune.position}}: {{each_fortune.name}}, worth ${{each_fortune.value}} billion</p>
 
 {% endfor %}
 
-{% endblock %}
+</body>
+</html>
+
+
 

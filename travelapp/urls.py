@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^fortune/',include('fortune.urls')),
     url(r'^api/', include(router.urls)),      # fix needed
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # api-auth used by top right login button in API root page :P
     url(r'^infographicsresume/',include('infographicsresume.urls')),
 
 

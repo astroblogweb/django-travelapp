@@ -15,7 +15,7 @@ from .serializers import FortuneSerializer,UserSerializer, GroupSerializer
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
-from rest_framework.renderers import TemplateHTMLRenderer
+from rest_framework.renderers import TemplateHTMLRenderer,JSONRenderer
 
 class FortuneList(View):  # not REST, just generic view
     def get(self,request,*args,**kwargs):
@@ -26,8 +26,10 @@ class FortuneList(View):  # not REST, just generic view
 
 
 class FortuneAPIList_template(APIView):  # REST - view
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    renderer_classes = [TemplateHTMLRenderer]
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    # renderer_classes = [TemplateHTMLRenderer]
+    renderer_classes = (TemplateHTMLRenderer,)
+    # renderer_classes = (JSONRenderer, )
     template_name = "fortune_list_REST.html"
     def get(self,request):
         # get objects, serialize objects using Serializer, return/render
@@ -35,12 +37,12 @@ class FortuneAPIList_template(APIView):  # REST - view
         return Response({'fortune':fortune})
         # serializer=FortuneSerializer(fortune, many=True)  #many=True:multiple
         # return Response(serializer.data)
-    def post(self,request):
-        serializer = FortuneSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # def post(self,request):
+    #     serializer = FortuneSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
