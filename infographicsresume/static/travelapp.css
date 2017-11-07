@@ -19,6 +19,12 @@
     width: 100%;
     /*table-layout: fixed;*/
 }
+.center_col{
+    float: none;
+    display: block;
+    margin: 0 auto;
+}
+
 
 .welcome>h3{
     font-family: cursive;
@@ -40,7 +46,7 @@
     border: 2px solid black;
     padding: 15px;
     margin-bottom: 15px;
-
+    /*height: auto;*/
 }
 
 .content_frame>div>div{
@@ -70,3 +76,27 @@
 }
 /** { border: 1px solid red; }*/
 
+.display_blogs{} .display_blogs>h1{text-align: center;}
+.display_blogs>h2>a{border: 2px solid #56A5EC; border-radius: 5px; padding: 5px;}
+.display_blogs>h2,h3{text-align: center;}
+.display_blogs>p{text-align: center;}
+/*.display_blogs>h3{text-align: center;}*/
+
+.options{
+    font-size: 20px;
+
+    float:left;
+}
+
+.votes{
+    font-size: 35px;
+    /*text-align: center;*/
+    vertical-align: middle;
+    display: table-cell;
+    /*float: right;*/
+}
+
+#opi_vote{
+    /*display: flex;  */
+    align-items: center;
+    justify-content: center;}

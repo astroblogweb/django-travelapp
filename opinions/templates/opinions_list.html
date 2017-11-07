@@ -4,15 +4,14 @@
 
 {% block afternav %}
 
-<h1>opinions List....</h1>
+<h1>List of Opinions</h1>
 <div>
     {% if opinions %}
     {% for opinion in opinions %}
 
     <a href="{% url 'opinions:opinions_detail' pk=opinion.pk %}">
         <h3>{{opinion.question}}</h3></a>
-    <a href="{% url 'opinions:opinions_vote' pk=opinion.pk %}">
-        <p>Vote</p></a>
+    <!-- <a href="{% url 'opinions:opinions_vote' pk=opinion.pk %}"><p>Vote</p></a> -->
 
     {% endfor %}
 

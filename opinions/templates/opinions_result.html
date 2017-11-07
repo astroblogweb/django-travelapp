@@ -3,18 +3,27 @@
 
 
 {% block afternav %}
+<div class="container display_blogs">
+      <div class="row centered">
 
-<h1>opinions Result</h1>
-<div>
+<h1>Opinions Result</h1>
+
 
     <h3>{{opinions.question}}</h3>
 
+
+
+
         {% for choice in opinions.choice_set.all %}
-        <p> {{choice.choice_text}}    {{choice.votes}}</p>
+
+        <div class="col-md-4 col-md-offset-4">
+            <p class="options">  {{choice.choice_text}} </p>
+        </div>
+        <div class="col-md-2">
+            <p class="votes">{{choice.votes}}</p>
+        </div>
+
         {% endfor %}
-
-
-
 
 
 

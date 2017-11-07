@@ -4,18 +4,32 @@
 
 {% block afternav %}
 
-<h1>opinions Detail</h1>
-<div>
+<div class="container display_blogs">
+      <div class="row centered">
+<h1>Opinions Detail</h1>
+    <h3 >{{opinions.question}}</h3>
 
- <a href="{% url 'opinions:opinions_vote' pk=opinions.pk %}">Vote</a>
 
-    <h3>{{opinions.question}}</h3>
+
 
         {% for choice in opinions.choice_set.all %}
-        <p> {{choice.choice_text}}...{{choice.votes}}</p>
+
+        <div class="col-md-4 col-md-offset-4">
+            <p class="options">  {{choice.choice_text}} </p>
+        </div>
+        <div class="col-md-2">
+            <p class="votes">{{choice.votes}}</p>
+        </div>
+
         {% endfor %}
 
 
+
+<h2>
+    <a href="{% url 'opinions:opinions_vote' pk=opinions.pk %}">Vote</a>
+</h2>
+
+    </div>
 
 </div>
 

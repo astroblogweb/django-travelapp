@@ -15,7 +15,12 @@
 
     <body>
 
+{% if request.path == "/" %}
+<div class="full_page" style="height:100%">
+{% else %}
 <div class="full_page">
+{% endif %}
+
     <!-- <div class="row" style="height: 10px"></div> -->
 <div>
 <div class="container">
@@ -283,13 +288,14 @@
 </div>
 <!-- todo:
 
-    placesdata:scrap errors,
     usergroups,
     directions   ,
     googlesocial(site_id)
     desc/cont/pkg for all
     fortune:desc/con/pkg
     debug=false (static files??)
+    moveup,down
+    admin / api page template
 
    -->
 
