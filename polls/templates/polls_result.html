@@ -4,21 +4,23 @@
 
 {% block afternav %}
 
-<h1>Polls Result</h1>
-<div>
+<div class="container display_blogs">
+      <div class="row centered">
 
+<h1>Polls Result</h1>
     <h3>{{poll.question}}</h3>
 
         {% for choice in poll.choice_set.all %}
-        <p> {{choice.choice_text}}    {{choice.votes}}</p>
+        <div class="col-md-4 col-md-offset-2">
+        <p class="options"> {{choice.choice_text}}</p>
+        </div>
+        <div class="col-md-2">
+        <p class="votes">{{choice.votes}}</p>
+        </div>
         {% endfor %}
 
 
-
-
-
-
-
+</div>
 
 
 </div>

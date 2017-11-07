@@ -13,14 +13,38 @@
 
 
 {% block afternav %}
+<div class="container display_blogs">
+      <div class="row centered">
+
 <h1>Contact Us</h1>
 <form method="post">
+    {% load widget_tweaks %}
     {% csrf_token %}
-    {{ form.as_p }}
+
+
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% for field in form.visible_fields %}
+      <div class="form-group" style="width: 80%; padding: 0px auto;">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
     <div class="form-actions">
-      <button type="submit">Send</button>
+      <button type="submit" style="font-size: 20px;">Send Email</button>
     </div>
+
+
 </form>
+
+</div>
+</div>
 
 
 {% endblock %}
