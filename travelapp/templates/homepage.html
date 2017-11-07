@@ -52,7 +52,7 @@
 <div class="col-md-10">
     <ul class="nav nav-tabs" style="width:100%">
     <li>
-        <a href="{% url 'homepage' %}">Home page</a>
+        <a href="{% url 'homepage' %}">Homepage</a>
     </li>
 
 
@@ -72,7 +72,8 @@
             <ul class="dropdown-menu">
                 <li><a href="/fortune/">Generic Views</a></li>
                 <li><a href="/fortune/fortuneapi">REST API</a></li>
-
+                <li><a href="/fortune/fortuneapilist_template">REST API list template</a></li>
+                <li><a href="/fortune/fortuneapidetail_template">REST API details template</a></li>
 
 
            </ul>
@@ -107,6 +108,17 @@
            </ul>
         </li>
         <!-- <li><a href="/contactus/">Contact Us</a></li> -->
+
+    <li><a class="dropdown-toggle" data-toggle="dropdown" href="/api/">API points</a>
+          <ul class="dropdown-menu">
+            <li><a href="/api/">REST API root (all) </a></li>
+            <li><a href="/api/users/">REST API users </a></li>
+            <li><a href="/api/groups/">REST API groups </a></li>
+            <li><a href="/api/fortune/">REST API fortune </a></li>
+                <!-- <li><a href="/api-auth/">users-rest auth</a></li> -->
+           </ul>
+        </li>
+
 </ul>
 </div>
 <div class="col-md-2" style="position: relative; float: right; ">
@@ -114,15 +126,7 @@
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">Account</a>
     <ul class="dropdown-menu">
-        <li><a href="/admin/">Admin</a></li>
-
-
-        <!-- TO FIX THIS -->
-        <!-- <li><a href="/fortune_usergroups">usergroups-REST </a></li>
-        <li><a href="/fortune_usergroups/users">users-REST </a></li>
-        <li><a href="/fortune_usergroups/groups">groups-REST </a></li>
-        <li><a href="/api-auth">users-rest auth</a></li> -->
-
+        <li><a href="/admin/">Admin access</a></li>
 
 
         {% if user.is_authenticated %}
@@ -258,7 +262,7 @@
 
 
 
-{% if 'blog/' in request.path or 'polls/' in request.path or 'opinions/' in request.path %}
+{% if 'blog/' in request.path or 'polls/' in request.path %}
 {% else %}
 
        <div class="content_frame col-container">
@@ -307,7 +311,8 @@
 </div>
 <!-- todo:
 
-    usergroups,
+    api-auth
+     (under fortune)--- add d.auth.models(u/g) into pkg
     directions   ,
     googlesocial(site_id)
     desc/cont/pkg for all
