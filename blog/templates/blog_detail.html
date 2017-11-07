@@ -3,17 +3,28 @@
 
 
 {% block afternav %}
-
+<div class="container display_blogs">
+      <div class="row centered">
 <h1>Blog Detail</h1>
-<div>
 
-<a href="{% url 'blog:blog_edit' pk=blog.pk %}">Edit</a>
+
+
     <h3>{{blog.title}}</h3>
+    <div class="col-md-10 col-md-offset-1" >
+        <p style="float: right">{{blog.pub_date| date:"D d M Y"}}</p>
+        <br>
     <p>{{blog.content | linebreaksbr}}</p>
-    <p>created on: {{blog.created_date}}</p>
-    <p>published on: {{blog.pub_date}}</p>
+    <!-- <p>created on: {{blog.created_date}}</p> -->
+
+    </div>
+
 
 </div>
+<h3>
+<a href="{% url 'blog:blog_edit' pk=blog.pk %}">Edit this</a>
+</h3>
+</div>
+
 
 
 {% endblock %}

@@ -3,18 +3,51 @@
 
 
 {% block afternav %}
-<h1>Blog</h1>
+<div class="container display_blogs">
+      <div class="row centered">
 
+<h1>Create new blog post</h1>
 
 {% if user.is_authenticated %}
 <form method="post">
+    {% load widget_tweaks %}
+
     {% csrf_token %}
-    {{ form.as_p }}
+
+
+
+
+  {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% for field in form.visible_fields %}
+      <div class="form-group" style="width: 80%; padding: 0px auto;">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+
+
+
+
     <div class="form-actions">
-      <button type="submit">Send</button>
+      <button type="submit" style="font-size: 20px;">Create</button>
     </div>
+
+
 </form>
+{% else %}
+<h3>Please Login to edit</h3>
 {% endif %}
+
+<p>*Note: blog will be published after admin verifies the content</p>
+</div>
+</div>
 
 {% endblock %}
 

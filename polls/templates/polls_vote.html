@@ -3,36 +3,31 @@
 
 
 {% block afternav %}
-
+<div class="container display_blogs">
+    <div class="row centered">
 <h1>Polls Vote</h1>
-<div>
-
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
     <h3>{{poll.question}}</h3>
-
-
-
-
 <form action="{% url 'polls:polls_vote' poll.id %}" method="post">
 
     {% csrf_token %}
 
     {% for choice in poll.choice_set.all %}
 
-
+    <div class="col-md-1 col-md-offset-3">
     <input type="radio" name="choice" id="{{ choice.choice_text }}" value="{{ choice.id }}" />
+    </div>
+        <div class="col-md-6">
     <label for="choice{{ forloop.counter }}"> {{ choice.choice_text }} </label><br />
-
+    </div>
         {% endfor %}
 
-<input type="submit" name="vote" value="vote_for_this"/>
-
+<div id="opi_vote">
+<input type="submit" name="vote" value="vote"/>
+</div>
 </form>
 
-
-
-
-
-
+</div>
 </div>
 
 

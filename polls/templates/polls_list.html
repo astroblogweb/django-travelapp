@@ -4,18 +4,22 @@
 
 {% block afternav %}
 
-<h1>Polls List</h1>
+<h1>List of Polls </h1>
 <div>
+    {% if polls %}
     {% for poll in polls %}
 
     <a href="{% url 'polls:polls_detail' pk=poll.pk %}">
         <h3>{{poll.question}}</h3></a>
-    <a href="{% url 'polls:polls_vote' pk=poll.pk %}">
+<!--     <a href="{% url 'polls:polls_vote' pk=poll.pk %}">
         <p>Vote</p></a>
-
+ -->
 
 
     {% endfor %}
+    {% else %}
+    <h3>No polls available</h3>
+    {% endif %}
 </div>
 
 

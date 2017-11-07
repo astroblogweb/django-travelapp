@@ -99,4 +99,14 @@
 #opi_vote{
     /*display: flex;  */
     align-items: center;
-    justify-content: center;}
+    justify-content: center;
+}
+
+
+.blog_content{
+    font-size: 30px;
+}
+
+.blog_title_class{
+    font-size: 100px;
+}

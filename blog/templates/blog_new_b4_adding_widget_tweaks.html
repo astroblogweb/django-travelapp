@@ -1,0 +1,29 @@
+{% extends "homepage.html" %}
+
+
+
+{% block afternav %}
+<div class="container display_blogs">
+      <div class="row centered">
+
+<h1>Create new blog post</h1>
+
+
+{% if user.is_authenticated %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit" style="font-size: 20px;">Create</button>
+    </div>
+</form>
+{% endif %}
+
+<p>*Note: blog will be published after admin verifies the content</p>
+</div>
+</div>
+
+{% endblock %}
+
+
+

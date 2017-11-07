@@ -23,7 +23,7 @@ def blog_new(request):
             #return redirect(reverse_lazy("blog_detail"),pk=blog.pk)
             # needs relative path for .html, so give url-name
             return render(request,"blog_detail.html",{"blog":blog})
-    return render(request,"blog_edit.html",{"form":form})
+    return render(request,"blog_new.html",{"form":form})
 
 
 def blog_edit(request,pk):
