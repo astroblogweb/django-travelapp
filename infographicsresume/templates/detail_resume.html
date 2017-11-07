@@ -1,54 +1,35 @@
 {% extends "homepage.html" %}
 
+{% block description %}
+    <p></p>
+{% endblock %}
+{% block concepts %}
+    <p></p>
+{% endblock %}
+{% block packages %}<p></p>{% endblock %}
+
 
 
 {% block afternav %}
 
-<h1>Cv detail</h1>
+<h1>Resume Detail</h1>
 <div>
-<p>{{resume.firstname}} {{resume.lastname}}
-was born on {{resume.dateofbirth}} and prefers style {{resume.style}}</p>
 
-
-<!-- <form id="edit_resume">
-{% csrf_token %}
-<div>
-    <input type="submit" name="submit" value="edit style" onclick="window.location.href='edit_resume'">
+<div class="resume_styles" style="width:30%;height:200px;margin-top: 20px;">
+{% include "view_info_resume.html" %}
 </div>
-</form>
- -->
+<h4 style="padding-left: 10px;">Style: {{resume.style}}</h4>
 
 
 <div>
-    <input type="submit" name="submit" value="edit style" onclick="window.location.href='/infographicsresume/edit/1'">
-</div>
-
-
-<div class="resume_styles">
-    {% include "view_info_resume.html" %}
-</div>
-
+    <input type="submit" name="submit" value="Edit Resume / Change Style" onclick="window.location.href='/infographicsresume/edit/1'" style="font-size: 15px">
 </div>
 
 
 
-
-<!-- <script type="text/javascript">
-$(document).on("submit","#edit_resume",function(e){
-    $.ajax({
-        type:"POST",
-        url:"/infographicsresume/edit_resume",
-        data:{
+</div>
 
 
-
-        }
-
-    });
-
-});
-
-</script> -->
 
 {% endblock %}
 

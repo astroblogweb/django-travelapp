@@ -14,9 +14,12 @@
 
 {% block afternav %}
 <div class="container display_blogs">
+
       <div class="row centered">
 
 <h1>Contact Us</h1>
+<div style="border:2px solid black; padding:20px; border-radius: 10px;width: 80%;margin: 10px 10px;">
+
 <form method="post">
     {% load widget_tweaks %}
     {% csrf_token %}
@@ -27,7 +30,7 @@
     {% endfor %}
 
     {% for field in form.visible_fields %}
-      <div class="form-group" style="width: 80%; padding: 0px auto;">
+      <div class="form-group" style="width: 100%; padding: 0px auto;">
         <label for="{{ field.id_for_label }}">{{ field.label }}</label>
         {{ field|add_class:'form-control' }}
         {% for error in field.errors %}
@@ -42,7 +45,7 @@
 
 
 </form>
-
+</div>
 </div>
 </div>
 

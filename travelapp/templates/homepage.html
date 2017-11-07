@@ -56,16 +56,16 @@
     </li>
 
 
-
+<!--
     <li><a class="dropdown-toggle" data-toggle="dropdown" href="/infographicsresume/">Infographic CV</a>
         <ul class="dropdown-menu">
         <li><a href="/infographicsresume/list">List</a></li>
-        <!-- <li><a href="{% url 'infographicsresume:list_resume' %}">CV-lists.. dynamic link</a></li> -->
+         <li><a href="{% url 'infographicsresume:list_resume' %}">CV-lists.. dynamic link</a></li>
         <li><a href="/infographicsresume/new">New</a></li>
         <li><a href="/infographicsresume/detail/1">Detail</a></li>
         <li><a href="/infographicsresume/edit/1">Edit</a></li>
         </ul>
-    </li>
+    </li> -->
 
 
     <li><a class="dropdown-toggle" data-toggle="dropdown" href="/fortune/">Fortune 500</a>
@@ -175,14 +175,15 @@
 
 <!-- <div class="row" style="height:10px"></div> -->
 <div>
-<div class="col-12 col-md-4">
+<div class="col-12 col-md-5">
 <ul class="nav nav-tabs" id="pol_opi_blo">
+    <li><a data-toggle="tab" href="#infocv">Resumes</a></li>
     <li><a data-toggle="tab" href="#opinions">Opinions</a></li>
     <li><a data-toggle="tab" href="#polls">Polls</a></li>
     <li><a data-toggle="tab" href="#blog">Blog</a></li>
 </ul>
 </div>
-<div class="col-12 col-md-8">
+<div class="col-12 col-md-6">
 <div class="tab-content">
     <div id="opinions" class="tab-pane ">
     <ul class="nav nav-tabs">
@@ -212,6 +213,18 @@
         <!-- <li><a href="/blog/1/">Blog Detail (1)</a></li> -->
         <li><a href="/blog/new/">Create new blog post</a></li>
     </ul></div>
+
+
+    <div id="infocv" class="tab-pane ">
+    <ul class="nav nav-tabs">
+    <li><a href="/infographicsresume/list">List Resumes</a></li>
+    <li><a href="/infographicsresume/new/">Create Resume</a></li>
+    </ul></div>
+
+
+
+
+
 </div>
 </div>
 

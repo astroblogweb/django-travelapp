@@ -1,22 +1,43 @@
 {% extends "homepage.html" %}
 
+{% block description %}
+    <p>Widgets input</p>
+{% endblock %}
+{% block concepts %}
+    <p>Forms: creation, adding widgets, input validation, POST</p>
+{% endblock %}
+{% block packages %}<p>django.core.validators, django.forms.widgets, django-widget_tweaks</p>{% endblock %}
+
 
 
 {% block afternav %}
 
 <h1>New Infographic resume</h1>
-<div>
+<div style="border:2px solid black; padding:20px; border-radius: 10px;width: 80%;margin: 10px 10px;">
 
 <form action="{% url 'infographicsresume:new_resume' %}" method="post">
 
-
+{% load widget_tweaks %}
 
     {% csrf_token %}
-    {{ resumeform.as_p }}
+ {% for hidden in resumeform.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% for field in resumeform.visible_fields %}
+      <div class="form-group" style="width: 100%; padding: 0px auto;">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
 
     <div class="form-actions">
-      <button type="submit">Send</button>
+      <button type="submit" style="font-size: 20px;">Create new resume</button>
     </div>
+
 
 </form>
 
