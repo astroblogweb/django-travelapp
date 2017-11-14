@@ -13,7 +13,7 @@ class GenerateRandomUserView(FormView):
     form_class = GenerateDataGenForm
     def form_valid(self, form):
         total = form.cleaned_data.get('total')
-        print("total:",total)
+        # print("total:",total)
         create_data_gen.delay(total)
         messages.success(self.request,
             'Generating your random users! Wait a moment and refresh this page.')
