@@ -1,0 +1,603 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"snipp",
+				"snippet_detail"
+			],
+			[
+				"Fo",
+				"FortuneViewSet\tclass"
+			],
+			[
+				"F",
+				"Fortune\tclass"
+			],
+			[
+				"fortune_list",
+				"fortune_list_REST"
+			],
+			[
+				"b",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"bo",
+				"border-color"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"font",
+				"font-variant"
+			],
+			[
+				"al",
+				"align-self"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"ali",
+				"text-align"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"col-",
+				"col-container"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"conn",
+				"content_frame"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"re",
+				"request\tparam"
+			],
+			[
+				"templa",
+				"templates"
+			],
+			[
+				"st",
+				"STATIC_URL\tstatement"
+			],
+			[
+				"settings_",
+				"settings_production\tmodule"
+			],
+			[
+				"sha",
+				"box-shadow"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"map",
+				"map_init"
+			],
+			[
+				"use",
+				"username\tstatement"
+			],
+			[
+				"U",
+				"UserForm\tclass"
+			],
+			[
+				"select",
+				"selectedIndex"
+			],
+			[
+				"edit",
+				"edit_resume"
+			],
+			[
+				"Resue",
+				"ResumeForm\tclass"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"Re",
+				"ResumeForm\tclass"
+			],
+			[
+				"For",
+				"FortuneSerializer\tclass"
+			],
+			[
+				"Dj",
+				"Django_to_js_string"
+			],
+			[
+				"D",
+				"Django_to_js_string"
+			],
+			[
+				"data",
+				"datavalue_nparray\tstatement"
+			],
+			[
+				"opin",
+				"opinion"
+			],
+			[
+				"Blog",
+				"BlogForm\tclass"
+			],
+			[
+				"render",
+				"render_to_response\tmodule"
+			],
+			[
+				"or",
+				"orderpk\tstatement"
+			],
+			[
+				"on",
+				"onChangeHandler"
+			],
+			[
+				"site",
+				"site_moveup"
+			],
+			[
+				"site_mo",
+				"site_moveup"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"lat",
+				"latlng\tstatement"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"choice",
+				"choice_pk_id\tstatement"
+			],
+			[
+				"get",
+				"get_object_or_404\tmodule"
+			],
+			[
+				"choi",
+				"choice_text\tstatement"
+			],
+			[
+				"ht",
+				"http"
+			],
+			[
+				"send",
+				"sending_data"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "pa",
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"advan",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			]
+		],
+		"width": 470.0
+	},
+	"console":
+	{
+		"height": 149.0,
+		"history":
+		[
+			"python delete.py",
+			"./delete.py",
+			"run(\"delete.py\")",
+			"i",
+			"i=1",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"clc",
+			"clear",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ubuntu/django_files/tsSetup"
+	],
+	"file_history":
+	[
+		"/home/ubuntu/django_files/travelapp/snippets/views.py",
+		"/home/ubuntu/django_files/travelapp/snippets/serializers.py",
+		"/home/ubuntu/django_files/travelapp/travelapp/settings_production.py",
+		"/home/ubuntu/django_files/travelapp/travelapp/urls.py",
+		"/home/ubuntu/django_files/travelapp/opinions/urls.py",
+		"/home/ubuntu/django_files/travelapp/snippets/urls.py",
+		"/home/ubuntu/django_files/travelapp/snippets/models.py",
+		"/home/ubuntu/django_files/travelapp/travelapp/settings_development.py",
+		"/home/ubuntu/django_files/travelapp/fortune/urls.py",
+		"/home/ubuntu/django_files/travelapp/fortune/views.py",
+		"/home/ubuntu/django_files/travelapp/fortune/templates/fortune_list_REST.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/settings.py",
+		"/home/ubuntu/django_files/travelapp/fortune/models.py",
+		"/home/ubuntu/django_files/travelapp/fortune/serializers.py",
+		"/home/ubuntu/django_files/travelapp/fortune/templates/fortune_list.html",
+		"/home/ubuntu/django_files/travelapp/fortune/views___b4_templates_REST.py",
+		"/home/ubuntu/django_files/travelapp/opinions/templates/opinions_list.html",
+		"/home/ubuntu/django_files/travelapp/opinions/templates/opinions_detail.html",
+		"/home/ubuntu/django_files/travelapp/opinions/templates/opinions_result.html",
+		"/home/ubuntu/django_files/travelapp/opinions/templates/opinions_vote.html",
+		"/home/ubuntu/django_files/travelapp/opinions/views.py",
+		"/home/ubuntu/django_files/travelapp/polls/views.py",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/static/travelapp.css",
+		"/home/ubuntu/django_files/travelapp/contactus/templates/email.html",
+		"/home/ubuntu/django_files/travelapp/blog/templates/blog_new.html",
+		"/home/ubuntu/django_files/travelapp/blog/templates/blog_edit.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/new_resume_form.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/detail_resume.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/edit_resume.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/list_resume.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/view_info_resume.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/models.py",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/views.py",
+		"/home/ubuntu/django_files/travelapp/polls/templates/polls_detail.html",
+		"/home/ubuntu/django_files/travelapp/polls/templates/polls_result.html",
+		"/home/ubuntu/django_files/travelapp/blog/views.py",
+		"/home/ubuntu/django_files/travelapp/blog/templates/blog_new_b4_adding_widget_tweaks.html",
+		"/home/ubuntu/django_files/travelapp/blog/templates/blog_list.html",
+		"/home/ubuntu/django_files/travelapp/blog/models.py",
+		"/home/ubuntu/django_files/travelapp/polls/templates/polls_list.html",
+		"/home/ubuntu/django_files/travelapp/blog/templates/blog_detail.html",
+		"/home/ubuntu/django_files/travelapp/polls/templates/polls_vote.html",
+		"/home/ubuntu/django_files/travelapp/placesdata/templates/places.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/base.html",
+		"/home/ubuntu/django_files/travelapp/geomaps/templates/directions.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage__b4_samerow-opipolblo.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage_navbar.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/views.py",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/home.html",
+		"/home/ubuntu/django_files/travelapp/placesdata/templates/places_scrapper.html",
+		"/home/ubuntu/django_files/travelapp/contactus/static/travelapp.css",
+		"/home/ubuntu/django_files/travelapp/travelapp/static/travelapp.css",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/table_new_template.html",
+		"/home/ubuntu/django_files/travelapp/placesdata/views.py",
+		"/home/ubuntu/django_files/travelapp/placesdata/tables.py",
+		"/home/ubuntu/django_files/travelapp/contactus/views.py",
+		"/home/ubuntu/django_files/travelapp/placesdata/urls.py",
+		"/home/ubuntu/django_files/travelapp/placesdata/models.py",
+		"/home/ubuntu/django_files/travelapp/placesdata/views_b4_tableviews.py",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/table_new_template_backup.html",
+		"/home/ubuntu/django_files/travelapp/placesdata/scrapper.py",
+		"/home/ubuntu/django_files/travelapp/analysis/templates/analysis_base.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/registration/login.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/registration.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/settings__Aws.py",
+		"/home/ubuntu/django_files/travelapp/fortune/admin.py",
+		"/home/ubuntu/django_files/travelapp/fortune/apps.py",
+		"/home/ubuntu/django_files/travelapp/contactus/templates/success.html",
+		"/home/ubuntu/django_files/travelapp/contactus/forms.py",
+		"/home/ubuntu/django_files/travelapp/contactus/models.py",
+		"/home/ubuntu/django_files/travelapp/contactus/admin.py",
+		"/home/ubuntu/django_files/travelapp/geomaps/views.py",
+		"/home/ubuntu/django_files/travelapp/geomaps/templates/schedule.html",
+		"/home/ubuntu/django_files/travelapp/geomaps/templates/base_geomaps_basic.html",
+		"/home/ubuntu/django_files/travelapp/analysis/templates/charts_redo_2.html",
+		"/home/ubuntu/django_files/travelapp/geopositioning/templates/geo_incl_query.html",
+		"/home/ubuntu/django_files/travelapp/geopositioning/templates/base_geo.html",
+		"/home/ubuntu/django_files/travelapp/geopositioning/templates/geo.html",
+		"/home/ubuntu/django_files/travelapp/geopositioning/models.py",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage____polopiblo_navbarworks.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage___opi-pol-blog---navbarseparate.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage____before_tabs.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage__still_vertical.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage_____before_header_bootstrap.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/base____.html",
+		"/home/ubuntu/django_files/travelapp/placeslist/templates/base.html",
+		"/home/ubuntu/django_files/travelapp/placeslist/templates/welcome.html",
+		"/home/ubuntu/django_files/travelapp/placeslist/templates/welcome_for_easymaps.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/login.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage___before_registrationloginredo.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/logout.html",
+		"/home/ubuntu/django_files/travelapp/login/templates__/registration.html",
+		"/home/ubuntu/django_files/travelapp/login/views.py",
+		"/home/ubuntu/django_files/travelapp/login/urls.py",
+		"/home/ubuntu/django_files/travelapp/todo/templates/list_todo.html",
+		"/home/ubuntu/django_files/travelapp/login/templates/registration.html",
+		"/home/ubuntu/django_files/travelapp/todo/static/todo.js",
+		"/home/ubuntu/django_files/travelapp/login/models.py",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/rating.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/urls.py",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/static/jquery.barrating.js",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/rating___before_commenting_other_styles.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/new_resume_form______b4rating_works.html",
+		"/home/ubuntu/django_files/travelapp/geomaps_incl_rubaxa_staticpending/templates/rubaxa_sorting_2.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/models___withsliderscode_not_reqd.py",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/slider.html",
+		"/home/ubuntu/Downloads/CV-Template/index.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/templates/edit_info_resume.html",
+		"/home/ubuntu/django_files/travelapp/infographicsresume/admin.py",
+		"/home/ubuntu/django_files/travelapp/travelapp/urls___works_with_homepage_usergroup_urls.py",
+		"/home/ubuntu/django_files/travelapp/travelapp/urls___before_REST.py",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/templates___/homepage.html",
+		"/home/ubuntu/django_files/travelapp/analysis/views.py",
+		"/home/ubuntu/django_files/travelapp/analysis/urls.py",
+		"/home/ubuntu/django_files/travelapp/templates___/homepage.html",
+		"/home/ubuntu/django_files/travelapp/geomaps/admin.py",
+		"/home/ubuntu/django_files/travelapp/analysis/views__1_random_number_works.py",
+		"/home/ubuntu/django_files/travelapp/analysis/templates/charts_redo_1.html",
+		"/home/ubuntu/django_files/travelapp/analysis/templates/charts.html",
+		"/home/ubuntu/django_files/travelapp/opinions/templates/opinions_detail___b4_generics.html",
+		"/home/ubuntu/django_files/travelapp/travelapp/templates/homepage___before_generic_for_opinions.html",
+		"/home/ubuntu/django_files/travelapp/opinions/views__traditional_without_generics.py",
+		"/home/ubuntu/django_files/travelapp/opinions/urls__traditional_without_generic.py",
+		"/home/ubuntu/django_files/travelapp/polls/urls.py",
+		"/home/ubuntu/django_files/travelapp/opinions/templates/opinions_vote__not_working_b4_deleting.html",
+		"/home/ubuntu/django_files/travelapp/opinions/models.py",
+		"/home/ubuntu/django_files/travelapp/opinions/admin.py"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sni",
+			"rest_",
+			"fortune",
+			"loa",
+			"contact",
+			"opi_b",
+			".tab",
+			"info",
+			"width",
+			"float",
+			"frame",
+			"direc",
+			"if ",
+			"if",
+			"full",
+			"css",
+			"base_dir",
+			"dire",
+			"find",
+			"api",
+			"scrip",
+			"before",
+			"google",
+			"background-",
+			"google",
+			"geopo",
+			"    \n",
+			"soci",
+			"email",
+			"back",
+			"twi",
+			"googl",
+			"face",
+			"reg",
+			"regis",
+			"login",
+			"authen"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "tsSetup.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

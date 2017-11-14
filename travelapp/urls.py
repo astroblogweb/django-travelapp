@@ -27,10 +27,12 @@ urlpatterns = [
     url(r'^geo/',include('geopositioning.urls')),
     url(r'^geomaps/',include('geomaps.urls')),
     url(r'^fortune/',include('fortune.urls')),
+    url(r'^snippets/',include('snippets.urls')),
     url(r'^api/', include(router.urls)),      # fix needed
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     # api-auth used by top right login button in API root page :P
     url(r'^infographicsresume/',include('infographicsresume.urls')),
+    url(r'^asynctasks/',include('asynctasks.urls')),
 
 
     # below 'oauth removed'.. social auth incl in login screen itself

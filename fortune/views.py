@@ -34,7 +34,8 @@ class FortuneAPIList_template(APIView):  # REST - view
     def get(self,request):
         # get objects, serialize objects using Serializer, return/render
         fortune=Fortune.objects.all()
-        return Response({'fortune':fortune})
+        print("in apilist_template")
+        return Response({'fortune':fortune}, template_name="fortune_list_REST.html")
         # serializer=FortuneSerializer(fortune, many=True)  #many=True:multiple
         # return Response(serializer.data)
     # def post(self,request):

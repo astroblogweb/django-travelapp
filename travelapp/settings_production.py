@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.twitter',
     'widget_tweaks',
+    'snippets.apps.SnippetsConfig',
+    'asynctasks',
 ]
 
 SITE_ID=3
