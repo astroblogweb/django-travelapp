@@ -40,11 +40,11 @@ SOCIALACCOUNT_PROVIDERS =  {'facebook':
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAdminUser',],
     'PAGE_SIZE': 10,
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.TemplateHTMLRenderer',
-        # 'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
-    )
+    # 'DEFAULT_RENDERER_CLASSES': (
+    #     'rest_framework.renderers.TemplateHTMLRenderer',
+    #     # 'rest_framework.renderers.JSONRenderer',
+    #     'rest_framework.renderers.BrowsableAPIRenderer',
+    # )
 }
 
 mimetypes.add_type("text/css", ".css", True)
@@ -155,10 +155,11 @@ AUTHENTICATION_BACKENDS = (
 )
 # allauth
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'  # for allauth
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username'  #email
+ACCOUNT_EMAIL_REQUIRED = False #True
 #   works and sends email verifications : ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_USERNAME_REQUIRED = False
+# http://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_USERNAME_REQUIRED = True #False
 
 
 LOGIN_URL = 'login'

@@ -11,7 +11,7 @@ class FortuneSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    #url = serializers.HyperlinkedIdentityField(view_name="fortune:user-detail")
+    # url = serializers.HyperlinkedIdentityField(view_name="fortune:user-detail")
     class Meta:
         model = User
         fields = ('url', 'username', 'email', 'groups')

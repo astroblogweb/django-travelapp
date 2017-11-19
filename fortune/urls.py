@@ -9,7 +9,7 @@ app_name='fortune'
 urlpatterns = [
     url(r'^$', views.FortuneList.as_view(), name='fortune_list'),
     url(r'^fortuneapi', views.FortuneAPIList.as_view(), name='fortune_api-list'),
-    url(r'^fortuneapilist_template', views.FortuneAPIList_template.as_view(), name='fortune_api-list-template'),
-    url(r'^fortuneapidetail_template', views.FortuneAPIDetail_template.as_view(), name='fortune_api-detail-template'),
+    url(r'^fortuneapilist_template', views.FortuneAPIList.as_view(), name='fortune_api-list-template'),
+    url(r'^fortuneapidetail_template', views.FortuneAPIDetail.as_view(), name='fortune_api-detail-template'),
 ]
 
