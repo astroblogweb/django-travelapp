@@ -11,14 +11,14 @@ def choose_state(site_state,max_listing=100):
     soup = BeautifulSoup(page,'html.parser')
 #    print(len(soup))
     listing_info=soup.find_all("div",attrs={"class":"listing_details"})
-    print("l_i:",len(listing_info),max_listing)
+    # print("l_i:",len(listing_info),max_listing)
     sites=extract_details(site_state,url_final,listing_info,max_listing)
     site_headers=["site_state","site_slug","site_name","site_city_parent","site_link","site_rating","site_category","site_speciality"]
 #    print("retrieved data for :",len(sites),"sites")
     sites_df=DataFrame(sites)
     sites_df.columns=site_headers
-    print(sites_df.head())
-    print("site_state:\t",site_state,"len of df returned:",len(sites_df))
+    # print(sites_df.head())
+    # print("site_state:\t",site_state,"len of df returned:",len(sites_df))
     return(sites_df)
 
 
