@@ -31,7 +31,7 @@ def get_state_URL(site_state,max_listing):
     query='tripadvisor.in places to visit in'+'_'.join(site_state.split())
     url=[];url_final=""
     for url_gen in search(query, tld='co.in', lang='en',num=20, stop=20,pause=1.0):
-        output=re.search(r'^(https://www.tripadvisor.in/).*(attractions).*(activities).*[^0-9].*(html)',url_gen,re.M|re.I)
+        output=re.search(r'^(https://www.tripadvisor.(in|com)/).*(attractions).*(activities).*[^0-9].*(html)',url_gen,re.M|re.I)
         print(url_gen)
         if output:
             url.append(url_gen)
