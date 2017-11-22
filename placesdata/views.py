@@ -1,11 +1,14 @@
 from django.shortcuts import render
-
 from django.http import HttpResponse
-
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from .serializers import PlaceSerializer
 # Create your views here.
-from .models import State,Place
+from .models import State,Place,ToDo
 from .scrapper import *
 from .forms import StateForm
+from rest_framework import viewsets
+from rest_framework import permissions
 
 #site_name,site_city_parent,site_link,site_rating,site_category,site_speciality
 
@@ -35,7 +38,7 @@ def places_scrapper(request):
 #    return render(request, 'detail.html', {'article': article, 'title':title})
 #    return HttpResponse("in places scrapper views")
 
-    
+
 def add_location(request,state,max_listing):  # size 1 (list)
 #    print("inside add_location")
 #    states=['meghalaya']
@@ -43,13 +46,15 @@ def add_location(request,state,max_listing):  # size 1 (list)
 #    for state in states:
 #        print("processing for state:",state)
 #        sites_df=choose_state(state)
-    
+
     sites_df=choose_state(state,max_listing)
 #    short_df=sites_df[1:5]
     short_df=sites_df
+    print("short_df:",short_df)
     for index, row in short_df.iterrows():
         new_place=Place()
         new_place.site_state=row['site_state']
+        new_place.site_slug=row['site_slug']
         new_place.site_name=row['site_name']
         new_place.site_city_parent=row['site_city_parent']
         new_place.site_link=row['site_link']
@@ -61,3 +66,20 @@ def add_location(request,state,max_listing):  # size 1 (list)
     print("success in form posting..")
 #    return render(request, 'places_scrapper.html', {'places':Place.objects.all()})
     return render(request, 'places_scrapper.html', {'places':Place.objects.all()})
+
+
+
+
+
+@login_required
+def user_todo(request):
+    todos = ToDo.objects.filter(user=request.user)
+    places=Place.objects.all()
+    print("in user_todo")
+    return render(request, 'user_todo.html', {'todos' : todos,'places':places})
+
+
+class PlaceViewSet(viewsets.ModelViewSet):
+    permission_classes = (permissions.AllowAny,)
+    queryset = Place.objects.all().order_by('-site_rating')
+    serializer_class = PlaceSerializer

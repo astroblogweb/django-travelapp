@@ -1,0 +1,24 @@
+[
+    {
+        "name":"Borra Caves",
+        "slug":"Borra_Caves",
+        "embed?":"",
+        "image":"assets/images/travel/Borra_Caves.jpg",
+        "featured":true
+    },
+    {
+        "name":"Kanaka Durga Temple",
+        "slug":"Kanaka_Durga_Temple",
+        "embed?":"",
+        "image":"assets/images/travel/Kanaka_Durga_Temple.jpg",
+        "featured":true
+
+    },
+    {
+        "name":"INS Kurusura Submarine Museum",
+        "slug":"INS_Kurusura_Submarine_Museum",
+        "embed?":"",
+        "image":"assets/images/travel/INS_Kurusura_Submarine_Museum.jpg",
+        "featured":true
+    }
+]

@@ -13,7 +13,7 @@ def choose_state(site_state,max_listing=100):
     listing_info=soup.find_all("div",attrs={"class":"listing_details"})
     print("l_i:",len(listing_info),max_listing)
     sites=extract_details(site_state,url_final,listing_info,max_listing)
-    site_headers=["site_state","site_name","site_city_parent","site_link","site_rating","site_category","site_speciality"]
+    site_headers=["site_state","site_slug","site_name","site_city_parent","site_link","site_rating","site_category","site_speciality"]
 #    print("retrieved data for :",len(sites),"sites")
     sites_df=DataFrame(sites)
     sites_df.columns=site_headers
@@ -40,7 +40,7 @@ def get_state_URL(site_state,max_listing):
             if final == ss:
                 print("final==ss")
                 url_final=url[-1]
-                break 
+                break
     print("site_state:",site_state,"\t","final URL:",url_final)
     return(url_final)
 
@@ -48,7 +48,7 @@ def get_state_URL(site_state,max_listing):
 
 
 
-    
+
 def extract_details(site_state,url_final,listing_info,max_listing):
     sites=[]
     print("l_i:",len(listing_info),max_listing)
@@ -59,9 +59,11 @@ def extract_details(site_state,url_final,listing_info,max_listing):
         #listing=listing_info[0]
         title=listing.find("div",attrs={"class":"listing_title "})
         site_name,site_city_parent=title.text.split('\n')[1:3]
+        site_slug='_'.join(' '.join(site_name.split('-')).split())
         site_city_parent=site_city_parent[1:-1]
         site_link=listing.find("a")["href"][1:]
         site_link=url_final.split('/')[-2]+'/'+site_link
+        site_link="https://"+site_link
 #        print(site_link)
         #[site_spend,site_gps]=fetch_hours_GPS(site_link)
         rs_rating=listing.find("div",attrs={"class","rs rating"})
@@ -70,7 +72,7 @@ def extract_details(site_state,url_final,listing_info,max_listing):
         site_speciality=listing.find("div",attrs={"class","popRanking wrap"}).text.strip()
         #print(site_name)
         #print(site_name,site_city_parent,site_link,site_rating,site_category,site_speciality,sep='\n')
-        site=[site_state,site_name,site_city_parent,site_link,site_rating,site_category,site_speciality]
+        site=[site_state,site_slug,site_name,site_city_parent,site_link,site_rating,site_category,site_speciality]
         sites.append(site)
     #print(sites[-1])
     #print(len(sites))

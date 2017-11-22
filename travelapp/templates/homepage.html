@@ -55,9 +55,9 @@
 
 <div class="col-md-10">
     <ul class="nav nav-tabs" style="width:100%">
-    <li>
-        <a href="{% url 'homepage' %}">Homepage</a>
-    </li>
+    <li><a href="{% url 'homepage' %}">Homepage</a> </li>
+
+    <!-- <li><a href="/travelplan/travelplan_plan/">Travel Plan</a></li> -->
 
 
 <!--
@@ -88,7 +88,7 @@
         <!-- <li><a href="/analysis/charts_func/">Charts func</a></li> -->
         <li><a href="/analysis/home_view/">Chart.js </a></li>
         <!-- <li><a href="/analysis/api/data/">API data</a></li> -->
-        <li><a href="/analysis/api/charts/data/">REST framework</a></li>
+        <!-- <li><a href="/analysis/api/charts/data/">REST framework</a></li> -->
     </ul>
  </li>
 
@@ -103,7 +103,7 @@
         <li><a class="dropdown-toggle" data-toggle="dropdown" href="/geomaps/">Geo</a>
         <ul class="dropdown-menu">
             <li><a href="/geo/">Positioning</a></li>
-            <li><a href="/geomaps/reverse_geocoding">Reverse Geocoding</a></li>
+            <li><a href="/geomaps/reverse_geocoding/">Reverse Geocoding</a></li>
             <!--<li><a href="/geomaps/shortlist">geo-shortlist</a></li>-->
             <li><a href="/geomaps/">Shortlist places</a></li>
             <!-- <li><a href="/geomaps/sorting_rubaxa">geo-rubaxa</a></li> -->
@@ -113,7 +113,8 @@
 
         <li><a class="dropdown-toggle" data-toggle="dropdown" href="/placesdata/">Travel Data</a>
           <ul class="dropdown-menu">
-              <li><a href="/placesdata/places_scrapper">Scrap the web</a></li>
+              <li><a href="/placesdata/places_scrapper/">Scrap the web</a></li>
+
            </ul>
         </li>
         <!-- <li><a href="/contactus/">Contact Us</a></li> -->
@@ -121,7 +122,11 @@
     <li><a class="dropdown-toggle" data-toggle="dropdown" href="/api/">API points</a>
           <ul class="dropdown-menu">
             <li><a href="/api/fortune/">REST API fortune </a></li>
-
+            <li><a href="/api/places/">REST API places </a></li>
+            <li><a href="/api/places-travelplan/">REST API places travelplan </a></li>
+            <li><a href="/api/travellers/">REST API travellers </a></li>
+            <li><a href="/api/trips/">REST API trips </a></li>
+            <li><a href="/api/itineraries/">REST API itineraries </a></li>
             <li><a href="/api/users/">REST API users </a></li>
             <li><a href="/api/groups/">REST API groups </a></li>
             <li><a href="/api/">REST API root (all) </a></li>
@@ -153,6 +158,8 @@
         <li><a href="/accounts/password/change/">Change Password </a></li>
         <li><a href="/accounts/email/">Email Settings</a></li>
         <li><a href="/accounts/logout/">Logout</a></li>
+        <li><a href="/placesdata/user_todo/">Todo user</a></li>
+
         {% else %}
         <li><a href="/accounts/login/">Login</a></li>
         <li><a href="/accounts/signup/">Sign Up</a></li>
@@ -338,20 +345,36 @@
 
 <!--
 
-    todo:
-    fortune api/list/detail
-    api-auth
-    (under fortune)--- add d.auth.models(u/g) into pkg
-    directions   ,
+    To Do:
+    ======
+    directions
+    change asynctasks: to grab latest news with timestamp..
     googlesocial(site_id)
-    desc/cont/pkg for all
-    fortune:desc/con/pkg
     debug=false (static files??)
-    moveup,down
+    geomaps page: shortlisted: moveup,down
     admin / api page template
-    api-tenplate htmlrenderer/static renderer
-    fortune- incl list/detail template
+    api-template htmlrenderer/static renderer
     reactjs/angularjs
+    placesData : some data analysis.
+    django:
+        user specific to do list
+        follow with itinery selection (data analysis output)
+        display cute graphics in angular
+    django + angular
+    user based data, like their fav posts/comments by them.
+    chat screen, To Do (user specific),
+    travel itinery...
+
+
+    todo:
+        pick categories of places and enable multiple selections.filter and display that
+
+        css for it, with toggle buttons (incl, data analysis and image)
+        shortlist these places to DB (user specific), display list
+        allow reorder
+        plan path (gmaps)
+        plan itinery
+    async: compare prices of article across sites (can use redis :P )
 
 -->
 

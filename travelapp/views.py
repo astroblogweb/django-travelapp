@@ -13,6 +13,11 @@ def homepage(request):
     #return render_to_response('homepage.html') # works, but username not appearing on homepage-alone
 
 
+def angular(request):
+    print("in angular view func")
+    return render(request,'index.html') # works better than r_2_r
+
+
 def new_admin(request):
     return render_to_response('new_admin.html')
 

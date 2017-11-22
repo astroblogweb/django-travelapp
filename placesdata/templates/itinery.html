@@ -1,0 +1,15 @@
+
+<div>
+<h1>User To Do</h1>
+
+{% if user.is_authenticated %}
+{% if todos %}
+{% for todo in todos %}
+    <p>{{todo.user}} | {{todo.description}} | {{todo.details}}</p><br>
+{% endfor %}
+{% else %}
+<p>no todo lists</p>
+{% endif %}
+{% else %}<p>Please login</p>
+{%endif%}
+</div>

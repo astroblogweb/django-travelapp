@@ -1,0 +1,23 @@
+[
+    {
+        "name":"item 1",
+        "slug":"video-1",
+        "embed":"9De86OZlQVI",
+        "image":"assets/images/nature/4.jpg"
+    },
+    {
+        "name":"item 2",
+        "slug":"video-2",
+        "embed":"lYvmbQiFnXE",
+        "image":"assets/images/nature/5.jpg",
+        "featured":true
+
+    },
+    {
+        "name":"item 3",
+        "slug":"video-3",
+        "embed":"LOJJvMacqEg",
+        "image":"assets/images/nature/6.jpg",
+        "featured":true
+    }
+]

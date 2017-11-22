@@ -1,0 +1,24 @@
+{% extends "homepage.html" %}
+
+{% block description %}
+    <p>Using Celery for asynchronous job queue. Using RabbitMQ as Message Broker.
+    This page generates some dummy usernames, email and keywords. </p>
+{% endblock %}
+{% block concepts %}
+    <p>Celery, RabbitMQ, task scheduling</p>
+{% endblock %}
+{% block packages %}
+    <p>celery, rabbitmq</p>
+{% endblock %}
+
+{% block afternav %}
+
+<h1>Task</h1>
+<h3>Generate random usernames, email and keywords</h3>
+<p>Enter the total number of users to generate</p>
+<form action="/asynctasks/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}

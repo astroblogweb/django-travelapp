@@ -1,0 +1,45 @@
+{% extends "homepage.html" %}
+
+
+{% block description %}
+    <p>Input a state name. Top travel sites in the mentioned state are retrieved from the internet (scrapped from a travel website) and displayed in a table form. </p>
+{% endblock %}
+{% block concepts %}
+    <p>Web scraping, dataframe</p>
+{% endblock %}
+{% block packages %}
+    <p>re, google, Beautifulsoup, urllib.request, pandas</p>
+{% endblock %}
+
+
+
+{% block afternav %}
+<div>
+<h1>Places - data </h1>
+
+
+<h3>Form</h3>
+
+	<form action="/placesdata/places_scrapper" method="post">
+   	{% csrf_token %}
+    {{ state_form.as_p }}
+<tr>
+	<th><label>Enter a State name:</label></th>
+	<td><input type="text" name="state_name" maxlength="100" id="state_name" /></td>
+</tr>
+ <input type="submit" value="submit">
+</form>
+
+
+<!-- <h3> Details, filled..</h3> -->
+
+{% load render_table from django_tables2 %}
+{% load static %}
+ <link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" />
+{% render_table places %}
+
+
+</div>
+
+{% endblock %}
+

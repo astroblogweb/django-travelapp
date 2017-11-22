@@ -1,0 +1,50 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only"></span>
+      <h4><a routerLink="/trips" routerLinkActive="active">Travel Sites</a></h4>
+
+    </button>
+    <a class="navbar-brand" routerLink="" routerLinkActive="active">Travel Website</a>
+  </div>
+
+
+
+
+<search [passedQuery]='query'></search>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+    <ul class="nav navbar-nav navbar-right">
+      <li style="font-size: 20px"><a routerLink="/trips" routerLinkActive="active">Travel Sites</a></li>
+    <!--   <li class="dropdown" dropdown>
+          <a routerLink="" routerLinkActive="active" dropdownToggle class="dropdown-toggle" data-toggle="dropdown">Dropdown<b class="caret"></b></a>
+          <ul *dropdownMenu class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+      </li> -->
+    </ul>
+
+
+  </div><!-- /.navbar-collapse -->
+
+
+  </div>
+</nav>
+
+
+
+<!-- <trip-list>Trips List</trip-list> -->
+<!-- <trip-detail>tripdetttaaaail</trip-detail> -->
+<div class="container main-container">
+<router-outlet></router-outlet>
+</div>
+<footer class="container text-center">
+    <h5> &copy; Footer</h5>
+</footer>

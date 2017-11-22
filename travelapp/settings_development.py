@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'snippets.apps.SnippetsConfig',
     'asynctasks',
+    'travelplan',
 ]
 
 SITE_ID=2

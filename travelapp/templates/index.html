@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>CfeApp</title>
+    <base href="/"></base>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"><!-- index.html -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="{{ STATIC_URL}} /static/styles.f73e0a8230df858a1154.bundle.css" rel="stylesheet"/>
+<script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.min.js"></script>
+
+<script type="text/javascript" src="{{ STATIC_URL }} /static/inline.1346e670e29c898ac93e.bundle.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }} /static/polyfills.ad37cd45a71cb38eee76.bundle.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }} /static/main.a3547cfcdb1f47490a48.bundle.js"></script>
+
+
+</head>
+<body>
+    <div ng-view></div>
+    <app-root>Loading...app-root</app-root>
+</body>
+</html>
+

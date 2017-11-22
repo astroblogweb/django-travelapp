@@ -39,7 +39,13 @@ SOCIALACCOUNT_PROVIDERS =  {'facebook':
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAdminUser',],
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': None,
+    # commenting for angular JS
+    # 'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAdminUser',],
+    # 'PAGE_SIZE': 10,
+
+
+
     # 'DEFAULT_RENDERER_CLASSES': (
     #     'rest_framework.renderers.TemplateHTMLRenderer',
     #     # 'rest_framework.renderers.JSONRenderer',
@@ -72,8 +78,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 CELERY_BROKER_URL = 'amqp://localhost'
 

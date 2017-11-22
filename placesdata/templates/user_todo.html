@@ -1,0 +1,45 @@
+{% extends "homepage.html" %}
+
+
+{% block description %}
+    <p></p>
+{% endblock %}
+{% block concepts %}
+    <p></p>
+{% endblock %}
+{% block packages %}
+    <p></p>
+{% endblock %}
+
+
+
+
+
+{% block afternav %}
+
+
+{% include "itinery.html" %}
+
+
+
+
+
+<div>
+<h1>Places</h1>
+
+<!-- {% if user.is_authenticated %} -->
+
+{% if places %}
+{% for place in places %}
+    <p>{{place.site_name}}</p>
+{% endfor %}
+{% else %}
+<p>no places lists</p>
+{% endif %}
+
+<!-- {% else %}<p>Please login</p> -->
+<!-- {%endif%} -->
+</div>
+
+{% endblock %}
+

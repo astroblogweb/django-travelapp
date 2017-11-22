@@ -1,0 +1,29 @@
+{% extends "homepage.html" %}
+
+{% block description %}
+    <p>Using Celery for asynchronous job queue. Using RabbitMQ as Message Broker.</p>
+{% endblock %}
+{% block concepts %}
+    <p>Celery, RabbitMQ, task scheduling</p>
+{% endblock %}
+{% block packages %}
+    <p>celery, rabbitmq</p>
+{% endblock %}
+
+
+
+{% block afternav %}
+
+<h1>taskdone.html</h1>
+
+{% if data_gen %}
+{% for data in data_gen %}
+    {{data.username}} - {{data.email}}   ..    {{data.keyword}}
+    <br>
+{% endfor %}
+
+{% else %}
+<h4>No data yet</h4>
+{% endif %}
+
+{% endblock %}

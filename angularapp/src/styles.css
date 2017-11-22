@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.main-container{
+    min-height: 500px;
+    margin-bottom: 20px;
+}
+.img-main-carousel{
+    max-height: 300px;
+}
+.carousel-control.prev{cursor:pointer;} /*doubt*/
+.carousel-control.next{cursor:pointer;}  /*doubt*/
+.search-inline,.search-inline .navbar-left, .search-inline .navbar-right{float: none !important;}

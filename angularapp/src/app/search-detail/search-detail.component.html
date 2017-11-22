@@ -1,0 +1,19 @@
+<!-- <search class="search-inline" [passedQuery]='query'></search> -->
+
+
+<div *ngIf='query'>
+    <h2>Searched for {{query}}</h2>
+    <!-- <h4>output:{{triplist}}</h4> -->
+    <div *ngFor = 'let item of triplist'>
+
+     <h3> <a routerLink='/trips/{{item.site_slug}}' routerLinkActive="active">{{item.site_name}}</a></h3>
+        <!-- <div><iframe width="150" height="150" [src]="getEmbedURL(item) | safe" frameborder="0" allowfullscreen *ngIf='item.embed'></iframe></div>
+        {{ item.embed}} -->
+
+    </div>
+</div>
+
+<div class="text-center" *ngIf='!query'>
+    <h2>Search something</h2>
+</div>
+

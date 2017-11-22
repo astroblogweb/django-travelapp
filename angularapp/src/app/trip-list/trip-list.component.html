@@ -1,0 +1,66 @@
+<h1>
+  {{title}}
+</h1>
+
+
+<!-- <h2>{{todayDate | date:"MM/dd/yy" }}</h2> -->
+<div *ngFor = 'let item of triplistitems'>
+<!-- <ng-container *ngFor="let item of triplistitems;
+let i = index; trackBy: {{item.site_city_parent}}"> <p>{{item.site_name}}</p></ng-container>
+ -->
+   <div class="thumbnail" style="float:left; margin: 15px;border:2px solid black;border-radius:15px;" [ngStyle]="{'background-color':getColor(item)}">
+
+      <iframe width="200" height="150" [src]="getEmbedURL(item) | safe" frameborder="0" allowfullscreen *ngIf='item.embed'></iframe>
+      <a routerLink='/trips/{{item.site_slug}}' routerLinkActive="active">
+      <!-- {{item.name}} -->
+  </a>
+
+
+<div class="caption" >
+
+  <!-- <div class="caption" style="border-radius:10px;" > -->
+        <div class="trip_caption">
+
+        <h3>{{item.site_name}}</h3>
+        <h5>Rating: {{item.site_rating}}</h5>
+    <h5>Category: {{item.site_category}}</h5>
+    <h5>City: {{item.site_city_parent}}</h5>
+
+
+      </div>
+
+
+
+
+
+        <p>
+
+            <a routerLink='/trips/{{item.site_slug}}' routerLinkActive="active" class="btn btn-primary" role="button" style="margin: 0 auto;">Read More..</a>
+            <!-- <a href="#" class="btn btn-default" role="button">Button</a> -->
+<!-- {{ item.embed}} -->
+
+        </p>
+      </div>
+    </div>
+
+
+
+
+  <!--WORKS................ <a routerLink='/trips/{{item.slug}}' routerLinkActive="active">{{item.name}}</a>
+  <div><iframe width="150" height="150" [src]="getEmbedURL(item) | safe" frameborder="0" allowfullscreen *ngIf='item.embed'></iframe></div>
+-->
+
+
+            <!-- <div [innerHTML]='item.embed'></div>
+            <div [innerHTML]='"<h1>h1 tag</h1>"'></div>
+            <div [innerHTML]='something'></div>
+             --><!-- <p>full link:</p> -->
+            <!-- <div><iframe width="150" height="120" src="https://www.youtube.com/embed/6wD4V0rvlDI" frameborder="0" allowfullscreen></iframe></div> -->
+            <!-- <p>getembedurl(item)</p> -->
+<!-- <div><iframe width="150" height="150" [src]="getEmbedURL(item) | safe" frameborder="0" allowfullscreen *ngIf='item.embed'></iframe></div> -->
+
+
+
+
+
+</div>

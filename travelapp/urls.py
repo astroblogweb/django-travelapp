@@ -8,14 +8,20 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles import views as staticfiles_views
 
 from django.conf.urls import url,include
-from fortune import views as rest_views
+from fortune import views as fortune_views
+from placesdata import views as places_views
+from travelplan import views as travelplan_views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'users', rest_views.UserViewSet)
-router.register(r'groups', rest_views.GroupViewSet)
-router.register(r'fortune', rest_views.FortuneViewSet)
-
+router.register(r'users', fortune_views.UserViewSet)
+router.register(r'groups', fortune_views.GroupViewSet)
+router.register(r'fortune', fortune_views.FortuneViewSet)
+router.register(r'places',places_views.PlaceViewSet)
+router.register(r'places-travelplan',travelplan_views.PlaceViewSet)
+router.register(r'travellers',travelplan_views.TravellerViewSet)#, 'travellers')
+router.register(r'trips',travelplan_views.TripViewSet)#, 'trips')
+router.register(r'itineraries',travelplan_views.ItineraryViewSet)#,'itineraries')
 
 
 urlpatterns = [
@@ -33,7 +39,7 @@ urlpatterns = [
     # api-auth used by top right login button in API root page :P
     url(r'^infographicsresume/',include('infographicsresume.urls')),
     url(r'^asynctasks/',include('asynctasks.urls')),
-
+    url(r'^travelplan/',include('travelplan.urls')),
 
     # below 'oauth removed'.. social auth incl in login screen itself
     # url(r'^oauth/', include('social_django.urls', namespace='social')),
@@ -45,6 +51,7 @@ urlpatterns = [
     url(r'^opinions/',include('opinions.urls')),
     url(r'^places/',include('placeslist.urls')),
     url(r'^homepage',views.homepage, name='homepage'),  # added new
+    # url(r'^angular',views.angular, name='angular'),  # added new
     url(r'^placesdata/',include('placesdata.urls')),
     url(r'^contactus/',include('contactus.urls')),
     url(r'^$',views.homepage, name='homepage'),

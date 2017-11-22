@@ -1,0 +1,2 @@
+npm install # reqd for first time in an env.
+npm start # check at localhost:3000
