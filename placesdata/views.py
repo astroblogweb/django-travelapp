@@ -69,8 +69,6 @@ def add_location(request,state,max_listing):  # size 1 (list)
 
 
 
-
-
 @login_required
 def user_todo(request):
     todos = ToDo.objects.filter(user=request.user)
