@@ -27,9 +27,9 @@ def places_scrapper(request):
             state_add_location_for=state_form.cleaned_data['state_name']
 #            print("\n\n\n",state_add_location_for,"\ncalling add_location function","\n\n\n")
             add_location(request,state_add_location_for,100)
-        else:
+        # else:
             # print("yes POST, not valid")
-    else:
+    # else:
         # print("request mtd: NOT POST")
     return render(request, 'places_scrapper.html', {'places':Place.objects.all()})
 #    states=['meghalaya']
