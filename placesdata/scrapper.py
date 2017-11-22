@@ -63,7 +63,8 @@ def extract_details(site_state,url_final,listing_info,max_listing):
         site_city_parent=site_city_parent[1:-1]
         site_link=listing.find("a")["href"][1:]
         site_link=url_final.split('/')[-2]+'/'+site_link
-        site_link="https://"+site_link
+        site_link='https://'+site_link
+        print("site_link:",site_link)
 #        print(site_link)
         #[site_spend,site_gps]=fetch_hours_GPS(site_link)
         rs_rating=listing.find("div",attrs={"class","rs rating"})
