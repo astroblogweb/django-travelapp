@@ -11,7 +11,8 @@ const endpoint='assets/json/trips.json'
 @Injectable()
 export class TripService {
   data:[any];
-  private apiURL = 'http://localhost:8000/api/places-travelplan/';
+  //private apiURL = 'http://localhost:8000/api/places-travelplan/';   // works on localhost
+  private apiURL = 'http://54.165.36.179:8000/api/places-travelplan/';
   constructor(private http:Http) { }
 
   listTrips() {
