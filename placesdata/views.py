@@ -28,9 +28,9 @@ def places_scrapper(request):
 #            print("\n\n\n",state_add_location_for,"\ncalling add_location function","\n\n\n")
             add_location(request,state_add_location_for,100)
         else:
-            print("yes POST, not valid")
+            # print("yes POST, not valid")
     else:
-        print("request mtd: NOT POST")
+        # print("request mtd: NOT POST")
     return render(request, 'places_scrapper.html', {'places':Place.objects.all()})
 #    states=['meghalaya']
 #    for state in states:
@@ -50,7 +50,7 @@ def add_location(request,state,max_listing):  # size 1 (list)
     sites_df=choose_state(state,max_listing)
 #    short_df=sites_df[1:5]
     short_df=sites_df
-    print("short_df:",short_df)
+    # print("short_df:",short_df)
     for index, row in short_df.iterrows():
         new_place=Place()
         new_place.site_state=row['site_state']
@@ -63,7 +63,7 @@ def add_location(request,state,max_listing):  # size 1 (list)
         new_place.site_speciality=row['site_speciality']
         new_place.save()
 #    return HttpResponse("done adding data to DB")
-    print("success in form posting..")
+    # print("success in form posting..")
 #    return render(request, 'places_scrapper.html', {'places':Place.objects.all()})
     return render(request, 'places_scrapper.html', {'places':Place.objects.all()})
 
@@ -75,7 +75,7 @@ def add_location(request,state,max_listing):  # size 1 (list)
 def user_todo(request):
     todos = ToDo.objects.filter(user=request.user)
     places=Place.objects.all()
-    print("in user_todo")
+    # print("in user_todo")
     return render(request, 'user_todo.html', {'todos' : todos,'places':places})
 
 
