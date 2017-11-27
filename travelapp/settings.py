@@ -4,7 +4,7 @@ import mimetypes
 #from importlib import import_module   # for social_auth - not works
 #from django.utils.module_loading import import_module # social_auth - not works
 
-
+from celery import Celery
 
 if os.environ.get('DJANGO_DEVELOPMENT') is not None:
     # print("in development mode")
