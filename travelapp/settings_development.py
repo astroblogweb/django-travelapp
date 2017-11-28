@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     'widget_tweaks',
     'snippets.apps.SnippetsConfig',
-    # 'asynctasks',
+    'asynctasks',
     'travelplan',
 ]
 
